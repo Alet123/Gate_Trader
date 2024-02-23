@@ -1,0 +1,857 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="GATE_Future_Labs,Vr_trading,algo_trading_brainwave,vr_reality,value_innovation">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="description" content="GATE Trader  Website">
+	<meta property="og:title" content="GATE Trader  Website">
+	<meta property="og:description" content="GATE Trader  Website">
+	<meta property="og:image" content="https://gatefuturelabs.com">
+	<meta name="format-detection" content="telephone=no">
+    <title>Gate Trader</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon11.png' %}">
+	<link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+
+<!-- Global CSS -->
+    <link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+<!-- End Global CSS -->
+
+<!-- Page Level CSS -->
+	<link rel="stylesheet" href="{% static './vendor/chartist/css/chartist.min.css' %}">
+	<link href="{% static './vendor/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+<!-- End Page Level CSS -->
+
+<!-- Bottom CSS -->
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+<!-- End Bottom CSS CSS -->
+
+
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="{% url 'index' %}" class="brand-logo">
+                <img src="{% static 'images/trader13.png' %}" style="width:180px;height:70px;align:right">
+            </a>
+
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="input-group search-area right d-lg-inline-flex d-none">
+								<input type="text" class="form-control" placeholder="Find something here...">
+								<div class="input-group-append">
+									<span class="input-group-text">
+										<a href="javascript:void(0)">
+											<i class="flaticon-381-search-2"></i>
+										</a>
+									</span>
+								</div>
+							</div>
+                        </div>
+
+						<marquee><b style="color: red;">All data displayed here are sample dummy data. Once you are connected with a broker, then live data will be populated.</b></marquee>
+
+                        <ul class="navbar-nav header-right main-notification">
+
+							<li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell dz-fullscreen" href="javascript:void(0);">
+                                    <svg id="icon-full" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path></svg>
+                                    <svg id="icon-minimize" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minimize"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path></svg>
+                                </a>
+							</li>
+
+
+
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+                                    <img src="{% static 'images/pro.png'' %}" alt="" id="profile-image" >
+									<div class="header-info">
+										<span id="userName">User</span>
+										<small id="userRole" >Super Admin</small>
+									</div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="{% url 'profile' %}" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ms-2">Profile </span>
+                                    </a>
+                                    <a href="./email-inbox.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <span class="ms-2">Inbox </span>
+                                    </a>
+                                    <a href="./page-login.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ms-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+			</div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+       <div class="deznav">
+            <div class="deznav-scroll">
+				<div class="main-profile">
+					<div class="image-bx">
+						<img src="{% static 'images/pro.png' %}" alt="" id="profile-image1" >
+						<a href="{% url 'edit' %}"><i class="fa fa-cog" aria-hidden="true"></i></a>
+					</div>
+					<h5 id="userName1" class="name"><span class="font-w400">Hello,</span> User</h5>
+					<p id="lastLoggedIn"  class="email">Last logged in : 2/5/2020 06:24 AM</p>
+				</div><br>
+				<ul class="metismenu" id="menu">
+                    <li><a class="has-arrow ai-icon" href="{% url 'index' %}" aria-expanded="false">
+							<i class="flaticon-144-layout"></i>
+							<span class="nav-text">Home</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'broker' %}" aria-expanded="false">
+							<i class="flaticon-061-puzzle"></i>
+							<span class="nav-text">Broker</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'trade_graph' %}" aria-expanded="false">
+							<i class="flaticon-061-puzzle"></i>
+							<span class="nav-text">Live Trade</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'order' %}" aria-expanded="false">
+							<i class="flaticon-003-diamond"></i>
+							<span class="nav-text">Order Book</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'p&l' %}" aria-expanded="false">
+							<i class="flaticon-053-heart"></i>
+							<span class="nav-text">Profit & Loss</span>
+						</a>
+						<ul aria-expanded="false">
+							<li><a href="{% url 'p&l' %}">P & L</a></li>
+                            <li><a href="{% url 'p&l_analysis' %}">P & L Analaysis</a></li>
+
+                        </ul>
+                    </li>
+					 <li><a class="has-arrow ai-icon" href="{% url 'market' %}" aria-expanded="false">
+							<i class="flaticon-381-settings-2"></i>
+							<span class="nav-text">Market Profile</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'news' %}" aria-expanded="false">
+							<i class="flaticon-044-file"></i>
+							<span   class="nav-text">Market News</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'subscriptions' %}" aria-expanded="false">
+							<i class="flaticon-381-network"></i>
+							<span class="nav-text">Subscription</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-049-copy"></i>
+							<span class="nav-text">Refer & Earn</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                            <li><a href="{% url 'login' %}">Login</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+				<div class="copyright">
+					<p><strong>Gate Trader</strong> © 2023 All Rights Reserved</p>
+					<p class="fs-12">Made with <span class="heart"></span> by GateFutureLabs</p>
+				</div>
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+		<div class="content-body">
+            <div class="container-fluid">
+				<div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h5 style="color:#1d1160;">How to Integrate Broker!</h5>
+                            <p style="font-size:102%;" class="mb-0">You can integrate multiple brokers on GateTrader. You need to renew access token every day.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+							<div> <img src="{% static 'images/get11.png' %}" width="50" >&nbsp;<small>Go to broker app ➨</small></div>&nbsp;&nbsp;&nbsp;&nbsp;
+							<div><img src="{% static 'images/get12.png' %}"  width="50">&nbsp;<small>Generate Key ➨</small></div>&nbsp;&nbsp;&nbsp;&nbsp;
+							<div> <img src="{% static 'images/get13.png' %}"  width="50">&nbsp;<small>Add key</small></div>
+                    </div>
+                </div>
+				<br>
+
+				  <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Brokers</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-md">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:80px;"><strong>BROKER</strong></th>
+                                                <th><strong>ACTIVATE</strong></th>
+                                                <th><strong>NAME</strong></th>
+                                                <th><strong>API KEY</strong></th>
+                                                <th><strong>SECRET KEY</strong></th>
+                                                <th><strong>LAST UPDATED</strong></th>
+												<th><strong>STATUS</strong></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+												<td><img class="rounded-circle" width="35" src="{% static 'images/profile/small/zer.jpeg' %}" alt=""></td>
+												<td><div class="form-check custom-checkbox mb-3 checkbox-success">
+											<input style="margin-left:2%;" type="checkbox" class="form-check-input" checked id="customCheckBox3" required></div>
+												</td>
+												<td>Mr. Bobby</td>
+                                                <td>W7X8RYL238-100</td>
+                                                <td>XXX XXX XXX</td>
+												<td>01 August 2023</td>
+												<td>
+													<span class="badge light badge-success">
+														<i class="fa fa-circle text-success me-1"></i>
+														Active
+													</span>
+												</td>
+                                               <td>
+													<div class="d-flex">
+														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+													</div>
+												</td>
+                                            </tr>
+											<tr>
+                                                <td><img class="rounded-circle" width="35" src="{% static 'images/profile/small/ang.jpeg' %}" alt=""></td>
+                                                <td>
+													<div class="form-check custom-checkbox mb-3 checkbox-danger">
+											<input style="margin-left:2%;" type="checkbox" class="form-check-input" checked id="customCheckBox5" required></div>
+												</td>
+												<td>Mr. Bobby</td>
+                                                <td>W7X8RYL238-100</td>
+                                                <td>XXX XXX XXX</td>
+												<td>01 August 2023</td>
+												<td>
+												<span class="badge light badge-danger">
+														<i class="fa fa-circle text-danger me-1"></i>
+														Non - Active
+													</span>
+												</td>
+                                                <td>
+													<div class="d-flex">
+														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+													</div>
+												</td>
+                                            </tr>
+											<tr>
+                                                <td><img class="rounded-circle" width="35" src="{% static 'images/profile/small/fly.jpeg' %}" alt=""></td>
+                                                <td><div class="form-check custom-checkbox mb-3 checkbox-success">
+											<input style="margin-left:2%;" type="checkbox" class="form-check-input" checked id="customCheckBox4" required></div>
+												</td>
+												<td>Mr. Bobby</td>
+                                                <td>W7X8RYL238-100</td>
+                                                <td>XXX XXX XXX</td>
+												<td>01 August 2023</td>
+												<td>
+													<span class="badge light badge-success">
+														<i class="fa fa-circle text-success me-1"></i>
+														Active
+													</span>
+												</td>
+												<td>
+													<div class="d-flex">
+														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+													</div>
+												</td>
+
+                                            </tr>
+
+											<tr>
+                                                <td><img class="rounded-circle" width="35" src="{% static 'images/profile/small/zer.jpeg' %}" alt=""></td>
+                                                 <td>
+													<div class="form-check custom-checkbox mb-3 checkbox-danger">
+											<input style="margin-left:2%;" type="checkbox" class="form-check-input" checked id="customCheckBox1" required></div>
+												</td>
+												<td>Mr. Bobby</td>
+                                                <td>W7X8RYL238-100</td>
+                                                <td>XXX XXX XXX</td>
+												<td>01 August 2023</td>
+												<td>
+												<span class="badge light badge-danger">
+														<i class="fa fa-circle text-danger me-1"></i>
+														Non - Active
+													</span>
+												</td>
+                                               <td>
+													<div class="d-flex">
+														<a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+													</div>
+												</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+									 <button style="background-color: #1d1160;border-color:#1d1160;margin-left:87%;" type="button" class="btn light btn-secondary" data-bs-toggle="modal" data-bs-target="#basicModal">  <i class="fa fa-plus color-info"></i>  Add Broker</button>
+									<div class="modal fade" id="basicModal">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Add Broker <br>Please fill the information in order to add the broker</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                    </button>
+                                                </div>
+
+												<div class="card-body">
+                                <div class="basic-form">
+                                    <form>
+                                        <div class="mb-3">
+											<form action="/submit" method="post">
+
+                                             <label for="broker-name">Name:</label>
+                                            <input id="broker-name" name="br-name" required type="text" class="form-control input-rounded" placeholder=""><br>
+
+                                            <label for="broker">Broker:</label>
+											<select id="broker" class="default-select form-control input-rounded">
+											<option value="">Select an option</option>
+                                            <option value="https://www.gatetrader.com/broker">Option 1</option>
+                                            <option value="https://example.com/link2">Option 2</option>
+                                            <option value="https://example.com/link3">Option 3</option>
+											</select><br><br>
+
+												 <label for="api">API Key:</label>
+                                            <input type="text" id="api" name="api" required  class="form-control input-rounded" placeholder=""><br>
+
+												  <label for="secretKey">Secret Key:</label>
+                                            <input type="text" id="secretKey" name="secretKey" required class="form-control input-rounded" placeholder=""><br>
+
+												 <label for="redirectURL">Redirect URL:</label>
+                                            <input type="text" id="redirectURL" name="redirectURL" required class="form-control input-rounded" placeholder="http://127.0.0.1/"><br>
+											 </form>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Add</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<br>
+				<div class=" form-head d-flex flex-wrap mb-4 align-items-center">
+					<h2 class="text-black me-auto font-w500 mb-3">Broker Details</h2>
+					<div class="card-action coin-tabs mt-3 mt-sm-0">
+						<ul class="nav nav-tabs" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link" data-bs-toggle="tab" href="#Bitcoin" role="tab" aria-selected="false">
+									<img class="rounded-circle" width="18" src="{% static 'images/profile/small/zer.jpeg' %}" alt="">
+									Zerodha
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " data-bs-toggle="tab" href="#Ethereum" role="tab" aria-selected="false">
+									<img class="rounded-circle" width="18" src="{% static 'images/profile/small/ang.jpeg' %}" alt="">
+									Angel One
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" data-bs-toggle="tab" href="#Monero" role="tab" aria-selected="true">
+									<img class="rounded-circle" width="18" src="{% static 'images/profile/small/fly.jpeg' %}" alt="">
+					 			Fyers
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " data-bs-toggle="tab" href="#Litecoin" role="tab" aria-selected="true">
+									<img class="rounded-circle" width="18" src="{% static 'images/profile/small/zer.jpeg' %}" alt="">
+									Zerodha
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tab-content">
+					<div class="tab-pane fade" id="Bitcoin">
+						<div class="row">
+							<div class="col-xl-3 col-xxl-4 mt-4">
+								<div class="swiper-slide">
+										<div class="card-bx stacked card">
+											<img src="{% static 'images/card/card7.png' %}" alt="">
+											<div class="card-info">
+												<p class="mb-1 text-white fs-14">Main Balance</p>
+												<div class="d-flex justify-content-between">
+													<h2 class="num-text text-white mb-5 font-w600">₹673,412.66</h2>
+													<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M19.2744 18.8013H16.0334V23.616H19.2744C19.9286 23.616 20.5354 23.3506 20.9613 22.9053C21.4066 22.4784 21.672 21.8726 21.672 21.1989C21.673 19.8813 20.592 18.8013 19.2744 18.8013Z" fill="white"/>
+														<path d="M18 0C8.07429 0 0 8.07429 0 18C0 27.9257 8.07429 36 18 36C27.9257 36 36 27.9247 36 18C36 8.07531 27.9247 0 18 0ZM21.6627 26.3355H19.5398V29.6722H17.3129V26.3355H16.0899V29.6722H13.8528V26.3355H9.91954V24.2414H12.0898V11.6928H9.91954V9.59863H13.8528V6.3288H16.0899V9.59863H17.3129V6.3288H19.5398V9.59863H21.4735C22.5535 9.59863 23.5491 10.044 24.2599 10.7547C24.9706 11.4655 25.416 12.4611 25.416 13.5411C25.416 15.6549 23.7477 17.3798 21.6627 17.4744C24.1077 17.4744 26.0794 19.4647 26.0794 21.9096C26.0794 24.3453 24.1087 26.3355 21.6627 26.3355Z" fill="white"/>
+														<path d="M20.7062 15.8441C21.095 15.4553 21.3316 14.9338 21.3316 14.3465C21.3316 13.1812 20.3842 12.2328 19.2178 12.2328H16.0334V16.4695H19.2178C19.7959 16.4695 20.3266 16.2226 20.7062 15.8441Z" fill="white"/>
+													</svg>
+												</div>
+												<div class="d-flex"><br><br><br><br>
+													<div class="me-4 text-white">
+														<p class="fs-12 mb-1 op6">VALID THRU</p>
+														<span>08/21</span>
+													</div>
+													<div class="text-white">
+														<p class="fs-12 mb-1 op6">CARD HOLDER</p>
+														<span>Marquezz Silalahi</span>
+													</div>
+												</div>
+												<div class="d-flex">
+													<div class="me-4 text-white">
+														<p class="fs-12 mb-1 op6">VALID THRU</p>
+														<span>08/21</span>
+													</div>
+													<div class="text-white">
+														<p class="fs-12 mb-1 op6">CARD HOLDER</p>
+														<span>Marquezz Silalahi</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+							</div>
+							<div class="col-xl-9 col-xxl-8 mt-4">
+								<div class="card">
+									<div class="card-header pb-0 d-block d-sm-flex flex-wrap border-0 align-items-center">
+										<div class="me-auto mb-3">
+											<h4 class="fs-20 text-black">Zerodha</h4>
+										</div>
+									</div>
+									<div class="card-body pb-0 pt-sm-3 pt-0">
+										<div class="row sp20 mb-4 align-items-center">
+
+											<div class="col-lg-4 col-xxl-4 col-sm-4 d-flex flex-wrap align-items-center">
+												<div class="px-2 info-group">
+													<p class="fs-18 mb-1">Price</p>
+													<h2 class="fs-28 font-w600 text-black">₹11,898.15</h2>
+												</div>
+											</div>
+
+											<div class="d-flex col-lg-8 col-xxl-8 col-sm-8 align-items-center mt-sm-0 mt-3 justify-content-end">
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">24h% change</p>
+													<h3 class="fs-20 font-w600"><span class="text-success">1.64%</span>
+													<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M0 7L7.00001 -8.77983e-06L14 7H7.00001H0Z" fill="#2BC155"></path>
+													</svg>
+													</h3>
+												</div>
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">Volume (24h)</p>
+													<h3 class="fs-20 font-w600 text-black">₹47.22B</h3>
+												</div>
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">Market Cap</p>
+													<h3 class="fs-20 font-w600 text-black">₹219.24B</h3>
+												</div>
+											</div>
+										</div>
+										<div id="chartBarRunning" class="bar-chart"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="Ethereum">
+						<div class="row">
+							<div class="col-xl-3 col-xxl-4 mt-4">
+								<div class="swiper-slide">
+										<div class="card-bx stacked card">
+											<img src="{% static 'images/card/card8.png' %}" alt="">
+											<div class="card-info">
+												<p class="mb-1 text-white fs-14">Main Balance</p>
+												<div class="d-flex justify-content-between">
+													<h2 class="num-text text-white mb-5 font-w600">₹673,412.66</h2>
+													<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M19.2744 18.8013H16.0334V23.616H19.2744C19.9286 23.616 20.5354 23.3506 20.9613 22.9053C21.4066 22.4784 21.672 21.8726 21.672 21.1989C21.673 19.8813 20.592 18.8013 19.2744 18.8013Z" fill="white"/>
+														<path d="M18 0C8.07429 0 0 8.07429 0 18C0 27.9257 8.07429 36 18 36C27.9257 36 36 27.9247 36 18C36 8.07531 27.9247 0 18 0ZM21.6627 26.3355H19.5398V29.6722H17.3129V26.3355H16.0899V29.6722H13.8528V26.3355H9.91954V24.2414H12.0898V11.6928H9.91954V9.59863H13.8528V6.3288H16.0899V9.59863H17.3129V6.3288H19.5398V9.59863H21.4735C22.5535 9.59863 23.5491 10.044 24.2599 10.7547C24.9706 11.4655 25.416 12.4611 25.416 13.5411C25.416 15.6549 23.7477 17.3798 21.6627 17.4744C24.1077 17.4744 26.0794 19.4647 26.0794 21.9096C26.0794 24.3453 24.1087 26.3355 21.6627 26.3355Z" fill="white"/>
+														<path d="M20.7062 15.8441C21.095 15.4553 21.3316 14.9338 21.3316 14.3465C21.3316 13.1812 20.3842 12.2328 19.2178 12.2328H16.0334V16.4695H19.2178C19.7959 16.4695 20.3266 16.2226 20.7062 15.8441Z" fill="white"/>
+													</svg>
+												</div>
+												<div class="d-flex"><br><br><br><br>
+													<div class="me-4 text-white">
+														<p class="fs-12 mb-1 op6">VALID THRU</p>
+														<span>08/21</span>
+													</div>
+													<div class="text-white">
+														<p class="fs-12 mb-1 op6">CARD HOLDER</p>
+														<span>Marquezz Silalahi</span>
+													</div>
+												</div>
+												<div class="d-flex">
+													<div class="me-4 text-white">
+														<p class="fs-12 mb-1 op6">VALID THRU</p>
+														<span>08/21</span>
+													</div>
+													<div class="text-white">
+														<p class="fs-12 mb-1 op6">CARD HOLDER</p>
+														<span>Marquezz Silalahi</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+							</div>
+							<div class="col-xl-9 col-xxl-8 mt-4">
+								<div class="card">
+									<div class="card-header pb-0 d-block d-sm-flex flex-wrap border-0 align-items-center">
+										<div class="me-auto mb-3">
+											<h4 class="fs-20 text-black">Angel One</h4>
+										</div>
+									</div>
+									<div class="card-body pb-0 pt-sm-3 pt-0">
+										<div class="row sp20 mb-4 align-items-center">
+											<div class="col-lg-4 col-xxl-4 col-sm-4 d-flex flex-wrap align-items-center">
+												<div class="px-2 info-group">
+													<p class="fs-18 mb-1">Price</p>
+													<h2 class="fs-28 font-w600 text-black">₹11,898.15</h2>
+												</div>
+											</div>
+											<div class="d-flex col-lg-8 col-xxl-8 co-sm-8 align-items-center mt-sm-0 mt-3 justify-content-end">
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">24h% change</p>
+													<h3 class="fs-20 font-w600"><span class="text-success">1.64%</span>
+													<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M0 7L7.00001 -8.77983e-06L14 7H7.00001H0Z" fill="#2BC155"></path>
+													</svg>
+													</h3>
+												</div>
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">Volume (24h)</p>
+													<h3 class="fs-20 font-w600 text-black">₹47.22B</h3>
+												</div>
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">Market Cap</p>
+													<h3 class="fs-20 font-w600 text-black">₹219.24B</h3>
+												</div>
+											</div>
+										</div>
+										<div id="chartBarRunning1" class="bar-chart"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade show active" id="Monero">
+						<div class="row">
+							<div class="col-xl-3 col-xxl-4 mt-4">
+								<div class="swiper-slide">
+										<div class="card-bx stacked card">
+											<img src="{% static 'images/card/card9.png' %}" alt="">
+											<div class="card-info">
+												<p class="mb-1 text-white fs-14">Main Balance</p>
+												<div class="d-flex justify-content-between">
+													<h2 class="num-text text-white mb-5 font-w600">₹673,412.66</h2>
+													<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M19.2744 18.8013H16.0334V23.616H19.2744C19.9286 23.616 20.5354 23.3506 20.9613 22.9053C21.4066 22.4784 21.672 21.8726 21.672 21.1989C21.673 19.8813 20.592 18.8013 19.2744 18.8013Z" fill="white"/>
+														<path d="M18 0C8.07429 0 0 8.07429 0 18C0 27.9257 8.07429 36 18 36C27.9257 36 36 27.9247 36 18C36 8.07531 27.9247 0 18 0ZM21.6627 26.3355H19.5398V29.6722H17.3129V26.3355H16.0899V29.6722H13.8528V26.3355H9.91954V24.2414H12.0898V11.6928H9.91954V9.59863H13.8528V6.3288H16.0899V9.59863H17.3129V6.3288H19.5398V9.59863H21.4735C22.5535 9.59863 23.5491 10.044 24.2599 10.7547C24.9706 11.4655 25.416 12.4611 25.416 13.5411C25.416 15.6549 23.7477 17.3798 21.6627 17.4744C24.1077 17.4744 26.0794 19.4647 26.0794 21.9096C26.0794 24.3453 24.1087 26.3355 21.6627 26.3355Z" fill="white"/>
+														<path d="M20.7062 15.8441C21.095 15.4553 21.3316 14.9338 21.3316 14.3465C21.3316 13.1812 20.3842 12.2328 19.2178 12.2328H16.0334V16.4695H19.2178C19.7959 16.4695 20.3266 16.2226 20.7062 15.8441Z" fill="white"/>
+													</svg>
+												</div>
+												<div class="d-flex"><br><br><br><br>
+													<div class="me-4 text-white">
+														<p class="fs-12 mb-1 op6">VALID THRU</p>
+														<span>08/21</span>
+													</div>
+													<div class="text-white">
+														<p class="fs-12 mb-1 op6">CARD HOLDER</p>
+														<span>Marquezz Silalahi</span>
+													</div>
+												</div>
+												<div class="d-flex">
+													<div class="me-4 text-white">
+														<p class="fs-12 mb-1 op6">VALID THRU</p>
+														<span>08/21</span>
+													</div>
+													<div class="text-white">
+														<p class="fs-12 mb-1 op6">CARD HOLDER</p>
+														<span>Marquezz Silalahi</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+							</div>
+							<div class="col-xl-9 col-xxl-8 mt-4">
+								<div class="card">
+									<div class="card-header pb-0 d-block d-sm-flex flex-wrap border-0 align-items-center">
+										<div class="me-auto mb-3">
+											<h4 class="fs-20 text-black">Fyers</h4>
+										</div>
+									</div>
+									<div class="card-body pb-0 pt-sm-3 pt-0">
+										<div class="row sp20 mb-4 align-items-center">
+											<div class="col-lg-4 col-xxl-4 col-sm-4 d-flex flex-wrap align-items-center">
+												<div class="px-2 info-group">
+													<p class="fs-18 mb-1">Price</p>
+													<h2 class="fs-28 font-w600 text-black">₹11,898.15</h2>
+												</div>
+											</div>
+											<div class="d-flex col-lg-8 col-xxl-8 col-sm-8 align-items-center mt-sm-0 mt-3 justify-content-end">
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">24h% change</p>
+													<h3 class="fs-20 font-w600"><span class="text-success">1.64%</span>
+													<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M0 7L7.00001 -8.77983e-06L14 7H7.00001H0Z" fill="#2BC155"></path>
+													</svg>
+													</h3>
+												</div>
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">Volume (24h)</p>
+													<h3 class="fs-20 font-w600 text-black">₹47.22B</h3>
+												</div>
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">Market Cap</p>
+													<h3 class="fs-20 font-w600 text-black">₹219.24B</h3>
+												</div>
+											</div>
+										</div>
+										<div id="chartBarRunning2" class="bar-chart"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="Litecoin">
+						<div class="row">
+							<div class="col-xl-3 col-xxl-4 mt-4">
+								<div class="swiper-slide">
+										<div class="card-bx stacked card">
+											<img src="{% static 'images/card/card10.png' %}" alt="">
+											<div class="card-info">
+												<p class="mb-1 text-white fs-14">Main Balance</p>
+												<div class="d-flex justify-content-between">
+													<h2 class="num-text text-white mb-5 font-w600">₹673,412.66</h2>
+													<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M19.2744 18.8013H16.0334V23.616H19.2744C19.9286 23.616 20.5354 23.3506 20.9613 22.9053C21.4066 22.4784 21.672 21.8726 21.672 21.1989C21.673 19.8813 20.592 18.8013 19.2744 18.8013Z" fill="white"/>
+														<path d="M18 0C8.07429 0 0 8.07429 0 18C0 27.9257 8.07429 36 18 36C27.9257 36 36 27.9247 36 18C36 8.07531 27.9247 0 18 0ZM21.6627 26.3355H19.5398V29.6722H17.3129V26.3355H16.0899V29.6722H13.8528V26.3355H9.91954V24.2414H12.0898V11.6928H9.91954V9.59863H13.8528V6.3288H16.0899V9.59863H17.3129V6.3288H19.5398V9.59863H21.4735C22.5535 9.59863 23.5491 10.044 24.2599 10.7547C24.9706 11.4655 25.416 12.4611 25.416 13.5411C25.416 15.6549 23.7477 17.3798 21.6627 17.4744C24.1077 17.4744 26.0794 19.4647 26.0794 21.9096C26.0794 24.3453 24.1087 26.3355 21.6627 26.3355Z" fill="white"/>
+														<path d="M20.7062 15.8441C21.095 15.4553 21.3316 14.9338 21.3316 14.3465C21.3316 13.1812 20.3842 12.2328 19.2178 12.2328H16.0334V16.4695H19.2178C19.7959 16.4695 20.3266 16.2226 20.7062 15.8441Z" fill="white"/>
+													</svg>
+												</div>
+												<div class="d-flex"><br><br><br><br>
+													<div class="me-4 text-white">
+														<p class="fs-12 mb-1 op6">VALID THRU</p>
+														<span>08/21</span>
+													</div>
+													<div class="text-white">
+														<p class="fs-12 mb-1 op6">CARD HOLDER</p>
+														<span>Marquezz Silalahi</span>
+													</div>
+												</div>
+												<div class="d-flex">
+													<div class="me-4 text-white">
+														<p class="fs-12 mb-1 op6">VALID THRU</p>
+														<span>08/21</span>
+													</div>
+													<div class="text-white">
+														<p class="fs-12 mb-1 op6">CARD HOLDER</p>
+														<span>Marquezz Silalahi</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+							</div>
+							<div class="col-xl-9 col-xxl-8 mt-4">
+								<div class="card">
+									<div class="card-header pb-0 d-block d-sm-flex flex-wrap border-0 align-items-center">
+										<div class="me-auto mb-3">
+											<h4 class="fs-20 text-black">Zerodha</h4>
+										</div>
+									</div>
+									<div class="card-body pb-0 pt-sm-3 pt-0">
+										<div class="row sp20 mb-4 align-items-center">
+											<div class="col-lg-4 col-xxl-4 col-sm-4 d-flex flex-wrap align-items-center">
+												<div class="px-2 info-group">
+													<p class="fs-18 mb-1">Price</p>
+													<h2 class="fs-28 font-w600 text-black">₹11,898.15</h2>
+												</div>
+											</div>
+											<div class="d-flex col-lg-8 col-xxl-8 col-sm-8 align-items-center mt-sm-0 mt-3 justify-content-end">
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">24h% change</p>
+													<h3 class="fs-20 font-w600"><span class="text-success">1.64%</span>
+													<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M0 7L7.00001 -8.77983e-06L14 7H7.00001H0Z" fill="#2BC155"></path>
+													</svg>
+													</h3>
+												</div>
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">Volume (24h)</p>
+													<h3 class="fs-20 font-w600 text-black">₹47.22B</h3>
+												</div>
+												<div class="px-2 info-group">
+													<p class="fs-14 mb-1">Market Cap</p>
+													<h3 class="fs-20 font-w600 text-black">₹219.24B</h3>
+												</div>
+											</div>
+										</div>
+										<div id="chartBarRunning3" class="bar-chart"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div  class="welcome-text">
+                            <h4 style="color:#1d1160;" >Our Partners</h4>
+							 <img src="{% static 'images/partners1.png' %}" width="1000" >
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+
+
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p style="margin-right:30%;">Copyright © Designed &amp; Developed by <a href="https://gatefuturelabs.com/" target="_blank">GateFutureLabs</a> 2023</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+	<!--removeIf(production)-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+
+	<script src="{% static './vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+	<script src="{% static './vendor/lightgallery/js/lightgallery-all.min.js' %}"></script>
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+
+ <!-- Required vendors -->
+	<script src="{% static './vendor/global/global.min.js' %}"></script>
+
+	<script src="{% static '/vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+
+	<script src="{% static './vendor/chart.js/Chart.bundle.min.js' %}"></script>
+	<!-- Chart piety plugin files -->
+    <script src="{% static './vendor/peity/jquery.peity.min.js' %}"></script>
+
+	<!-- Apex Chart -->
+	<script src="{% static './vendor/apexchart/apexchart.js' %}"></script>
+
+	<!-- Dashboard 1 -->
+	<script src="{% static './js/dashboard/dashboard-1.js' %}"></script>
+	<script src="{% static './vendor/owl-carousel/owl.carousel.js' %}"></script>
+
+	<script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+
+	<!-- Apex Chart -->
+	<script src="{% static './vendor/apexchart/apexchart.js' %}"></script>
+
+	<!-- Dashboard 1 -->
+	<script src="{% static './js/dashboard/coin-details.js' %}"></script>
+
+	 <!-- momment js is must -->
+    <script src="{% static './vendor/moment/moment.min.js' %}"></script>
+    <script src="{% static './vendor/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+
+
+
+
+</body>
+</html>

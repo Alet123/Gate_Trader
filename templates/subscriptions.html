@@ -1,0 +1,454 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="GATE_Future_Labs,Vr_trading,algo_trading_brainwave,vr_reality,value_innovation">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="description" content="GATE Trader  Website">
+	<meta property="og:title" content="GATE Trader  Website">
+	<meta property="og:description" content="GATE Trader  Website">
+	<meta property="og:image" content="https://gatefuturelabs.com">
+	<meta name="format-detection" content="telephone=no">
+    <title>Gate Trader</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon11.png' %}">
+	<link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+
+<!-- Global CSS -->
+    <link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+<!-- End Global CSS -->
+
+<!-- Page Level CSS -->
+	<link rel="stylesheet" href="{% static './vendor/chartist/css/chartist.min.css' %}">
+	<link href="{% static './vendor/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+<!-- End Page Level CSS -->
+
+<!-- Bottom CSS -->
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+<!-- End Bottom CSS CSS -->
+
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="{% url 'index' %}" class="brand-logo">
+                    <img src="{% static 'images/trader13.png' %}" style="width:170px;height:65px;align:right">
+            </a>
+
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+
+		<!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="input-group search-area right d-lg-inline-flex d-none">
+								<input type="text" class="form-control" placeholder="Find something here...">
+								<div class="input-group-append">
+									<span class="input-group-text">
+										<a href="javascript:void(0)">
+											<i class="flaticon-381-search-2"></i>
+										</a>
+									</span>
+								</div>
+							</div>
+                        </div>
+
+						<marquee><b style="color: red;">All data displayed here are sample dummy data. Once you are connected with a broker, then live data will be populated.</b></marquee>
+
+                        <ul class="navbar-nav header-right main-notification">
+
+							<li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell dz-fullscreen" href="javascript:void(0);">
+                                    <svg id="icon-full" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path></svg>
+                                    <svg id="icon-minimize" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minimize"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path></svg>
+                                </a>
+							</li>
+
+
+
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+                                    <img src="{% static 'images/pro.png'' %}" alt="" id="profile-image" >
+									<div class="header-info">
+										<span id="userName">User</span>
+										<small id="userRole" >Super Admin</small>
+									</div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="{% url 'profile' %}" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ms-2">Profile </span>
+                                    </a>
+                                    <a href="./email-inbox.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <span class="ms-2">Inbox </span>
+                                    </a>
+                                    <a href="./page-login.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ms-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+			</div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="deznav">
+            <div class="deznav-scroll">
+				<div class="main-profile">
+					<div class="image-bx">
+						<img src="{% static 'images/pro.png' %}" alt="" id="profile-image1" >
+						<a href="{% url 'edit' %}"><i class="fa fa-cog" aria-hidden="true"></i></a>
+					</div>
+					<h5 id="userName1" class="name"><span class="font-w400">Hello,</span> User</h5>
+					<p id="lastLoggedIn"  class="email">Last logged in : 2/5/2020 06:24 AM</p>
+				</div><br>
+				<ul class="metismenu" id="menu">
+                    <li><a class="has-arrow ai-icon" href="{% url 'index' %}" aria-expanded="false">
+							<i class="flaticon-144-layout"></i>
+							<span class="nav-text">Home</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'broker' %}" aria-expanded="false">
+							<i class="flaticon-061-puzzle"></i>
+							<span class="nav-text">Broker</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'trade_graph' %}" aria-expanded="false">
+							<i class="flaticon-061-puzzle"></i>
+							<span class="nav-text">Live Trade</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'order' %}" aria-expanded="false">
+							<i class="flaticon-003-diamond"></i>
+							<span class="nav-text">Order Book</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'p&l' %}" aria-expanded="false">
+							<i class="flaticon-053-heart"></i>
+							<span class="nav-text">Profit & Loss</span>
+						</a>
+						<ul aria-expanded="false">
+							<li><a href="{% url 'p&l' %}">P & L</a></li>
+                            <li><a href="{% url 'p&l_analysis' %}">P & L Analaysis</a></li>
+
+                        </ul>
+                    </li>
+					 <li><a class="has-arrow ai-icon" href="{% url 'market' %}" aria-expanded="false">
+							<i class="flaticon-381-settings-2"></i>
+							<span class="nav-text">Market Profile</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'news' %}" aria-expanded="false">
+							<i class="flaticon-044-file"></i>
+							<span   class="nav-text">Market News</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'subscriptions' %}" aria-expanded="false">
+							<i class="flaticon-381-network"></i>
+							<span class="nav-text">Subscription</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-049-copy"></i>
+							<span class="nav-text">Refer & Earn</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                            <li><a href="{% url 'login' %}">Login</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+				<div class="copyright">
+					<p><strong>Gate Trader</strong> © 2024 All Rights Reserved</p>
+					<p class="fs-12">Made with <span class="heart"></span> by GateFutureLabs</p>
+				</div>
+			</div>
+        </div>
+
+
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+		<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+			<div class="container-fluid">
+				<p style="font-size:120%;" >Hi, <b>Rabindra</b> Please select the best plan suited for you to subscribe to RoSH Signals. </p>
+					<div class="row">
+					<div class="col-xl-6 col-xxl-12">
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="card-bx stacked card">
+									<img src="{% static 'images/card/card1.jpg' %}" alt="">
+									<div class="card-info">
+										<p class="mb-1 text-white fs-14">Free Trial</p>
+										<div class="d-flex justify-content-between">
+											<h2 style=" font-size:160%;" class="num-text text-white mb-5 font-w600">₹ Free/<br>One week</h2>
+											<svg width="31" height="31" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19.2744 18.8013H16.0334V23.616H19.2744C19.9286 23.616 20.5354 23.3506 20.9613 22.9053C21.4066 22.4784 21.672 21.8726 21.672 21.1989C21.673 19.8813 20.592 18.8013 19.2744 18.8013Z" fill="white"/>
+												<path d="M18 0C8.07429 0 0 8.07429 0 18C0 27.9257 8.07429 36 18 36C27.9257 36 36 27.9247 36 18C36 8.07531 27.9247 0 18 0ZM21.6627 26.3355H19.5398V29.6722H17.3129V26.3355H16.0899V29.6722H13.8528V26.3355H9.91954V24.2414H12.0898V11.6928H9.91954V9.59863H13.8528V6.3288H16.0899V9.59863H17.3129V6.3288H19.5398V9.59863H21.4735C22.5535 9.59863 23.5491 10.044 24.2599 10.7547C24.9706 11.4655 25.416 12.4611 25.416 13.5411C25.416 15.6549 23.7477 17.3798 21.6627 17.4744C24.1077 17.4744 26.0794 19.4647 26.0794 21.9096C26.0794 24.3453 24.1087 26.3355 21.6627 26.3355Z" fill="white"/>
+												<path d="M20.7062 15.8441C21.095 15.4553 21.3316 14.9338 21.3316 14.3465C21.3316 13.1812 20.3842 12.2328 19.2178 12.2328H16.0334V16.4695H19.2178C19.7959 16.4695 20.3266 16.2226 20.7062 15.8441Z" fill="white"/>
+											</svg>
+										</div>
+										<div>
+											<p style="color:white;">One week <br> (5 working days)</p>
+											<p style="color:white;">Unlimited Automated trade executions</p>
+											<p style="color:white;">Based on Nifty signal</p>
+											<p style="color:white;">All features</p>
+										</div><br><br>
+									</div>
+									<form style="margin-left:13%;align:center;"><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KgOZoOUH2EXEF8" async> </script> </form>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="card-bx stacked card">
+									<img src="{% static 'images/card/card2.jpg' %}" alt="">
+									<div class="card-info">
+										<p class="fs-14 mb-1 text-white">Nifty Signal</p>
+										<div class="d-flex justify-content-between">
+											<h2 style=" font-size:160%;" class="num-text text-white mb-5 font-w600">₹49,980/<br>Biweekly</h2>
+											<svg width="50" height="29" viewBox="0 0 55 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<circle cx="38.0091" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+												<circle cx="17.4636" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+											</svg>
+										</div>
+										<div>
+											<p style="color:white;">Two Weeks (from the first date of execution to 14 days)</p>
+											<p style="color:white;">Unlimited Automated trade executions</p>
+											<p style="color:white;">Based on Nifty  signal</p>
+											<p style="color:white;">All features</p>
+										</div>
+									</div><br>
+									<form style="margin-left:13%;align:center;" ><script  src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KgP5W8B5M2EGCo" async> </script> </form>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="card-bx stacked card">
+									<img src="{% static 'images/card/card3.jpg' %}" alt="">
+									<div class="card-info">
+										<p class="mb-1 text-white fs-14">Bank Nifty</p>
+										<div class="d-flex justify-content-between">
+											<h2 style=" font-size:160%;" class="num-text text-white mb-5 font-w600">₹99,800/<br>Month</h2>
+											<svg width="50" height="29" viewBox="0 0 55 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<circle cx="38.0091" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+												<circle cx="17.4636" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+											</svg>
+										</div>
+										<div>
+											<p style="color:white;">One Month (from the first date of execution to 30 days)</p>
+											<p style="color:white;">Unlimited Automated trade executions</p>
+											<p style="color:white;">Based on Nifty & Bank Nifty signal</p>
+											<p style="color:white;">All features</p>
+										</div>
+									</div>
+									<form style="margin-left:13%;align:center;"><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KgPvgIWHfgIr1G" async> </script> </form>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="card-bx stacked card">
+									<img src="{% static 'images/card/card4.jpg' %}" alt="">
+									<div class="card-info">
+										<p  class="mb-1 text-white fs-14">Premium</p>
+										<div class="d-flex justify-content-between">
+											<h2 style=" font-size:160%;" class="num-text text-white mb-5 font-w600">₹199,980/<br>Month</h2>
+											<svg width="50" height="29" viewBox="0 0 55 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<circle cx="38.0091" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+												<circle cx="17.4636" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+											</svg>
+										</div>
+										<div>
+											<p style="color:white;">One Month (from the first date of execution to 30 days)</p>
+											<p style="color:white;">Unlimited Automated trade executions</p>
+											<p style="color:white;">Based on Nifty, Fin Nifty & Bank Nifty</p>
+											<p style="color:white;">All features</p>
+										</div>
+									</div>
+									<form style="margin-left:13%;align:center;" ><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_MdmJ8IpClEE66n" async> </script> </form>
+								</div>
+							</div>
+					</div>
+					</div>
+					</div>
+                    <br>
+				<div class="row page-titles mx-0">
+                    <div class="col-sm-19 p-md-0">
+                        <div class="welcome-text">
+                            <h5 style="color:#1d1160;text-align:left;" >Plans That Fit Your Scale </h5>
+                            <p style="font-size:106%;text-align:left;" class="mb-0">RoSH signals are proprietary patent pending signal system that facilitate highly profitable trades in Options segments. Based on your subscription plan, GateTrader will execute Automated trades in your connected broker Demat account.</p>
+                        </div>
+                    </div>
+                </div>
+
+						<div class="row page-titles mx-0">
+                    <div class="col-sm-19 p-md-0">
+                        <div class="welcome-text">
+
+							<ul class="pricing-features"><br>
+									<li style="color:#1d1160;font-size:129%;text-align:left;"><B>A user journey in GateTrader.com start from its</B></li><BR>
+									<p style="color:black;text-align:left;">•&nbsp; User ID creation. Its a free service.</p>
+									<p style="color:black;text-align:left;">•&nbsp;   New Demat account with brokers–is a free service.</p>
+									<p style="color:black;text-align:left;">•&nbsp; Create API secret code with broker-is a free service.</p>
+									<p style="color:black;text-align:left;">•&nbsp; KYC verification–free service.</p>
+									<p style="color:black;text-align:left;">•&nbsp; Connect API code and activate 3 days/ achieve minimum 50% profit from principle amount in your Demat account through &nbsp;&nbsp;&nbsp;Algo trading – is a free service.</p>
+                                    <p style="color:black;text-align:left;">•&nbsp; Subscribe to Trading Signals by GATE Future Labs Pvt. Ltd.– weekly/by weekly/Monthly Subscription charges apply.</p>
+									<p style="color:black;text-align:left;">•&nbsp; Automated trades executed in your Demat account (Using subscribed signals)–free of cost.</p>
+									<p style="color:black;text-align:left;">•&nbsp; Reports send to you via eMail/WhatsApp/Telegram/voice mail is free of charge Visit “Subscription” section in &nbsp;&nbsp;&nbsp;Gatefuturelabs.com for active subscription fee and offers. All prices are charged for a month period (30 days) and monthly &nbsp;&nbsp;&nbsp;charges may change any time without notice.</p><br><br>
+
+												<h5 style="color:#1d1160;font-size:140%;text-align:left;"><b>Terms & Conditions</b></h5><br>
+									<h5 style="font-size:120%;color:#71797E;text-align:left;"><b> Intraday Trading Services:</b><br></h5>
+                                                                                              <p style="color:black;text-align:left;">  We exclusively engage in executing intraday trades within your Demat accounts. We do not provide investment advisory services or implement hedging strategies for our clients.</p><br>
+									<h5 style="font-size:120%;color:#71797E;text-align:left;"><b> Minimum Account Balance:</b><br></h5>
+                                                                                     <p style="color:black;text-align:left;">      It is mandatory to maintain a balance ranging from one lakh to two lakhs INR in your Demat account. Withdrawals should only occur following prior notification and confirmation from us. Any account falling below the specified minimum balance will not be eligible for trade execution on that particular day.</p><br>
+									<h5 style="font-size:120%;color:#71797E;text-align:left;"><b> Non-Refundable Subscription Fees:</b><br></h5>
+													<p style="color:black;text-align:left;">All subscription fees are non-refundable under any circumstances.</p><br>
+									<h5 style="font-size:120%;color:#71797E;text-align:left;"><b> Algo Trading on National Stock Exchange (NSE India):</b><br></h5>
+													<p style="color:black;text-align:left;">All algorithmic trades will exclusively take place in the Index Options segment of the National Stock Exchange (NSE India).</p><br>
+									<h5 style="font-size:120%;color:#71797E;text-align:left;"><b> Trade Monitoring:</b><br></h5>
+													<p style="color:black;text-align:left;">You have the ability to monitor daily trade executions in the Virtual Trading section and review Profit and Loss in the Returns section of our website. We are committed to safeguarding our clients' information and do not disclose any client-specific details or executed trades from their accounts.</p><br>
+									<h5 style="font-size:120%;color:#71797E;text-align:left;"><b> Trial Period and API Integration:</b><br></h5>
+													<p style="color:black;text-align:left;">During the trial period, you can integrate your Demat account with GateTrader using API keys provided by the broker in our Brokers section. This integration allows you to execute trades within your own Demat account prior to subscription.</p><br>
+									<h5 style="font-size:120%;color:#71797E;text-align:left;"><b> Broker Connectivity:</b><br></h5>
+													<p style="color:black;text-align:left;">Presently, we have established connectivity with AngelOne and Fyers brokers, and we anticipate the inclusion of eight additional brokers into our network in the near future.</p><br>
+									<h5 style="font-size:120%;color:#71797E;text-align:left;"><b> Confidentiality of Trade Signals:</b><br></h5>
+													<p style="color:black;text-align:left;">All trade signals and orders are strictly intended for personal viewing. Any form of disclosure or distribution of our trade signals or trade details is strictly prohibited.</p><br>
+									<h5 style="font-size:120%;color:#71797E;text-align:left;"><b> Non-Registered Investment Advisor:</b><br></h5>
+													<p style="color:black;text-align:left;">We are not registered with SEBI (Securities and Exchange Board of India), NSE (National Stock Exchange), or RBI (Reserve Bank of India) as investment advisors. We do not represent any government entity or agency associated with stock exchanges or governmental organizations. We do not offer investment tips or advice based on any strategy, technical, or fundamental analysis methods. If you wish to implement your own proven strategy and automate it, you may consider consulting other algorithmic trading strategy developers. We do not provide custom strategy development services for individual users.</p><br>
+									<h5 style="font-size:120%;color:#71797E;text-align:left;"><b> Corporate Custom Applications:</b><br></h5>
+													<p style="color:black;text-align:left;">Corporate users may contact our support team for inquiries regarding customized applications tailored to their specific needs.</p><br>
+								</ul>
+
+                        </div>
+                    </div>
+
+						</div>
+				</div>
+			</div>
+		</div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p style="margin-right:45%;">Copyright © Designed &amp; Developed by <a href="https://gatefuturelabs.com/" target="_blank">GateFutureLabs</a> 2024</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+
+
+
+
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+	<script src="{% static './vendor/global/global.min.js' %}"></script>
+
+	<script src="{% static './vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+
+	<script src="{% static './vendor/chart.js/Chart.bundle.min.js' %}"></script>
+	<!-- Chart piety plugin files -->
+    <script src="{% static './vendor/peity/jquery.peity.min.js' %}"></script>
+
+	<!-- Apex Chart -->
+	<script src="{% static './vendor/apexchart/apexchart.js' %}"></script>
+
+	<!-- Dashboard 1 -->
+	<script src="{% static './js/dashboard/dashboard-1.js' %}"></script>
+	<script src="{% static './vendor/owl-carousel/owl.carousel.js' %}"></script>
+
+	<script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+	<!-- Required vendors -->
+
+
+    <script src="{% static './vendor/chart.js/Chart.bundle.min.js' %}"></script>
+
+
+    <!-- Chart Chartist plugin files -->
+    <script src="{% static './vendor/chartist/js/chartist.min.js' %}"></script>
+    <script src="{% static './vendor/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js' %}"></script>
+    <script src="{% static './js/plugins-init/chartist-init.js' %}"></script>
+
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+
+
+<!-- Using For Demo Only, Remove From Package Level  -->
+
+
+<!-- End Using For Demo Only, Remove From Package Level  -->
+
+
+
+</body>
+</html>

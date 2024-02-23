@@ -1,0 +1,891 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="GATE_Future_Labs,Vr_trading,algo_trading_brainwave,vr_reality,value_innovation">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="description" content="GATE Trader  Website">
+	<meta property="og:title" content="GATE Trader  Website">
+	<meta property="og:description" content="GATE Trader  Website">
+	<meta property="og:image" content="https://gatefuturelabs.com">
+	<meta name="format-detection" content="telephone=no">
+    <title>Gate Trader</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon11.png' %}">
+	<link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+	<script src="{% static 'https://code.jquery.com/jquery-3.6.4.min.js' %}"></script>
+    <script src="{% static 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css' %}">
+
+	<!-- Form step -->
+    <link href="{% static './vendor/jquery-smartwizard/dist/css/smart_wizard.min.css' %}" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+	<link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+
+<!-- Global CSS -->
+    <link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+<!-- End Global CSS -->
+
+<!-- Page Level CSS -->
+	<link rel="stylesheet" href="{% static './vendor/chartist/css/chartist.min.css' %}">
+	<link href="{% static './vendor/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+<!-- End Page Level CSS -->
+
+<!-- Bottom CSS -->
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+<!-- End Bottom CSS CSS -->
+
+
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="{% url 'index' %}" class="brand-logo">
+                <img src="{% static 'images/trader13.png' %}" style="width:180px;height:70px;align:right">
+            </a>
+
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="input-group search-area right d-lg-inline-flex d-none">
+								<input type="text" class="form-control" placeholder="Find something here...">
+								<div class="input-group-append">
+									<span class="input-group-text">
+										<a href="javascript:void(0)">
+											<i class="flaticon-381-search-2"></i>
+										</a>
+									</span>
+								</div>
+							</div>
+                        </div>
+						<marquee><b style="color: red;">All data displayed here are sample dummy data. Once you are connected with a broker, then live data will be populated.</b></marquee>
+                        <ul class="navbar-nav header-right main-notification">
+
+							<li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell dz-fullscreen" href="javascript:void(0);">
+                                    <svg id="icon-full" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path></svg>
+                                    <svg id="icon-minimize" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minimize"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path></svg>
+                                </a>
+							</li>
+
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+                                    <img src="{% static 'images/pro.png'' %}" alt="" id="profile-image" >
+									<div class="header-info">
+										<span id="userName">User</span>
+										<small id="userRole" >Super Admin</small>
+									</div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="{% url 'profile' %}" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ms-2">Profile </span>
+                                    </a>
+                                    <a href="./email-inbox.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <span class="ms-2">Inbox </span>
+                                    </a>
+                                    <a href="./page-login.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ms-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+			</div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+       <div class="deznav">
+            <div class="deznav-scroll">
+				<div class="main-profile">
+					<div class="image-bx">
+						<img src="{% static 'images/pro.png' %}" alt="" id="profile-image1" >
+						<a href="{% url 'edit' %}"><i class="fa fa-cog" aria-hidden="true"></i></a>
+					</div>
+					<h5 id="userName1" class="name"><span class="font-w400">Hello,</span> User</h5>
+					<p id="lastLoggedIn"  class="email">Last logged in : 2/5/2020 06:24 AM</p>
+				</div><br>
+				<ul class="metismenu" id="menu">
+                    <li><a class="has-arrow ai-icon" href="{% url 'index' %}" aria-expanded="false">
+							<i class="flaticon-144-layout"></i>
+							<span class="nav-text">Home</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'broker' %}" aria-expanded="false">
+							<i class="flaticon-061-puzzle"></i>
+							<span class="nav-text">Broker</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'trade_graph' %}" aria-expanded="false">
+							<i class="flaticon-061-puzzle"></i>
+							<span class="nav-text">Live Trade</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'order' %}" aria-expanded="false">
+							<i class="flaticon-003-diamond"></i>
+							<span class="nav-text">Order Book</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'p&l' %}" aria-expanded="false">
+							<i class="flaticon-053-heart"></i>
+							<span class="nav-text">Profit & Loss</span>
+						</a>
+						<ul aria-expanded="false">
+							<li><a href="{% url 'p&l' %}">P & L</a></li>
+                            <li><a href="{% url 'p&l_analysis' %}">P & L Analaysis</a></li>
+
+                        </ul>
+                    </li>
+					<li><a class="has-arrow ai-icon" href="{% url 'market' %}" aria-expanded="false">
+							<i class="flaticon-381-settings-2"></i>
+							<span class="nav-text">Market Profile</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'news' %}" aria-expanded="false">
+							<i class="flaticon-044-file"></i>
+							<span   class="nav-text">Market News</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'subscriptions' %}" aria-expanded="false">
+							<i class="flaticon-381-network"></i>
+							<span class="nav-text">Subscription</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-049-copy"></i>
+							<span class="nav-text">Refer & Earn</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                            <li><a href="{% url 'login' %}">Login</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+				<div class="copyright">
+					<p><strong>Gate Trader</strong> © 2024 All Rights Reserved</p>
+					<p class="fs-12">Made with <span class="heart"></span> by GateFutureLabs</p>
+				</div>
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+          <div class="content-body">
+			<div class="container-fluid">
+				<!-- Add Project -->
+				<div class="modal fade" id="addProjectSidebar">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Create Project</h5>
+								<button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label class="text-black font-w500">Project Name</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label class="text-black font-w500">Deadline</label>
+										<input type="date" class="form-control">
+									</div>
+									<div class="form-group">
+										<label class="text-black font-w500">Client Name</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<button type="button" class="btn btn-primary">CREATE</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-xl-12 col-xxl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Edit User Profile</h4>
+                            </div>
+                            <div class="card-body">
+								<div  id="smartwizard" class="form-wizard order-create">
+									<ul class="nav nav-wizard">
+										<li><a  class="nav-link" href="#wizard_Service">
+											<span>1</span>
+										</a></li>
+										<li><a class="nav-link" href="#wizard_Time">
+											<span>2</span>
+										</a></li>
+										<li><a class="nav-link" href="#wizard_Details">
+											<span>3</span>
+										</a></li>
+										<li><a class="nav-link" href="#wizard_Payment">
+											<span>4</span>
+										</a></li>
+									</ul>
+									<div class="tab-content">
+										<div id="wizard_Service" class="tab-pane" role="tabpanel">
+											<div class="row">
+												<div style="margin-left:2%;" class="col-lg-5 mb-2">
+													<div class="form-group">
+														<label class="text-label"><b>First Name*</b></label>
+														<input type="text" name="firstName" class="form-control" placeholder="Parsley" required>
+													</div>
+												</div>
+												<div style="margin-left:12%;" class="col-lg-5 mb-2">
+													<div class="form-group">
+														<label class="text-label"><b>Last Name*</b></label>
+														<input type="text" name="lastName" class="form-control" placeholder="Montana" required>
+													</div>
+												</div>
+												<div style="margin-left:2%;"  class="col-lg-5 mb-2">
+													<div class="form-group">
+														<label class="text-label"><b>Email Address*</b></label>
+														<input type="email" class="form-control" id="inputGroupPrepend2" aria-describedby="inputGroupPrepend2" placeholder="example@example.com" required>
+													</div>
+												</div>
+												<div style="margin-left:12%;" class="col-lg-5 mb-2">
+													<div class="form-group">
+														<label class="text-label"><b>Password*</b></label>
+														<input type="text" name="phoneNumber" class="form-control" placeholder="**** *****" required>
+													</div>
+												</div>
+												<div style="margin-left:2%;" class="col-lg-5 mb-2">
+													<div class="form-group">
+														<label class="text-label"><b>Phone Number*</b></label>
+														<input type="text" name="phoneNumber" class="form-control" placeholder="(+91)408-657-9007" required>
+													</div>
+												</div>
+												<div style="margin-left:12%;" class="col-lg-5 mb-2">
+													<div class="form-group">
+														<label class="text-label"><b>Country*</b></label>
+														<select name="country" class="form-control" required>
+																<option value="usa">India</option>
+                                                                <option value="usa">United States</option>
+                                                                <option value="canada">Canada</option>
+                                                                <option value="uk">United Kingdom</option>
+															    <option value="australia">Australia</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+												<div style="margin-left:2%;" class="col-lg-5 mb-2">
+													<div class="form-group">
+														<label class="text-label"><b>State*</b></label>
+														<select name="state" class="form-control" required>
+															<option value="Andhra Pradesh">Kerala</option>
+															<option value="Andhra Pradesh">Karnataka</option>
+															<option value="Andhra Pradesh">Andhra Pradesh</option>
+															<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+															<option value="Assam">Assam</option>
+															<option value="Bihar">Bihar</option>
+															<option value="Chhattisgarh">Chhattisgarh</option>
+														</select>
+													</div>
+												</div>
+												<div style="margin-left:12%;" class="col-lg-5 mb-2">
+													<div class="form-group">
+														 <label class="text-label"><b>Current City*</b></label>
+														 <input type="text" name="currentCity" class="form-control" placeholder="Enter your current city" required>
+													</div>
+												</div>
+
+												<div style="margin-left:2%;" class="col-lg-5 mb-4">
+                                                   <div class="form-group">
+                                                        <label class="text-label"><b>Current Address*</b></label>
+                                                        <textarea name="address" class="form-control" placeholder="Enter your address" rows="4" style="width: 99%; height: 200px;" required></textarea>
+                                                   </div>
+                                                </div>
+
+                                                <div style="margin-left:12%;" class="col-lg-5 mb-2">
+                                                   <div class="form-group">
+                                                        <label class="text-label"><b>Postal Code*</b></label>
+													    <input type="text" name="postalCode" class="form-control" placeholder="Enter your postal code" required>
+												   </div>
+                                                </div>
+											</div>
+										</div>
+
+										<div id="wizard_Time" class="tab-pane" role="tabpanel">
+											<div class="row">
+												<div style="margin-left:2%;" class="col-lg-5 mb-2">
+													 <label class="text-label"><b>Profile Picture*</b></label>
+													<div class="form-group"><br>
+														<img style="width:14%;height:14%;margin-left:3%;" src="{% static 'images/pro.png' %}"><br><br>
+														<input type="file" name="profilePicture" class="form-control-file" accept="image/*">
+													</div>
+												</div>
+												<div style="margin-left:12%;" class="col-lg-5 mb-2">
+                                                    <div class="form-group">
+														<label class="text-label"><b>Date of Birth*</b></label>
+                                                        <input type="date" name="dateOfBirth" class="form-control" placeholder="YYYY-MM-DD" required>
+                                                    </div>
+                                                </div>
+												<div style="margin-left:2%;" class="col-lg-5 mb-2">
+                                                    <div class="form-group" style="display: flex; align-items: center;">
+                                                        <label class="text-label"><b>Gender*</b></label>
+													<div style="margin-left: 10px;">
+                                                        <input type="radio" id="male" name="gender" value="male" required>
+                                                       <label for="male">Male</label>
+                                                </div>
+                                                    <div style="margin-left: 10px;">
+                                                        <input type="radio" id="female" name="gender" value="female" required>
+                                                        <label for="female">Female</label>
+                                                </div>
+                                                    <div style="margin-left: 10px;">
+                                                        <input type="radio" id="other" name="gender" value="other" required>
+                                                        <label for="other">Don't want to disclose</label>
+                                                    </div>
+                                                     </div>
+                                                  </div>
+
+
+												<div style="margin-left:12%;" class="col-lg-5 mb-3">
+												<div class="form-group">
+													<label class="text-label"><b>Qualification*</b></label>
+													<select name="qualification" class="form-control" required>
+														<option value="" disabled selected>Select Qualification</option>
+														<option value="10th">10th</option>
+														<option value="12th">12th</option>
+														<option value="degree">Degree</option>
+														<option value="pg">Post Graduation</option>
+													</select>
+                                                </div>
+												</div>
+												<div class="row">
+													<div style="margin-left: 2%;" class="col-lg-5 mb-2">
+														<div class="form-group">
+															<label class="text-label"><b>PAN Card Number*</b></label>
+															<input type="text" name="panCardNumber" class="form-control" placeholder="Enter PAN Card Number" required>
+														</div>
+													</div>
+													<div class="col-lg-5 mb-2">
+														<div class="form-group">
+															<label class="text-label">Add Pan Card*</label><br>
+															<input type="file" name="photo" class="form-control-file" accept="image/*" required>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div style="margin-left: 2%;" class="col-lg-5 mb-2">
+														<div class="form-group">
+															<label class="text-label"><b>Aadhaar Card Number*</b></label>
+														    <input type="text" name="aadhaarCardNumber" class="form-control" placeholder="Enter Aadhaar Card Number" required><br>
+														</div>
+													</div>
+													<div class="col-lg-5 mb-2">
+														<div class="form-group">
+															<label class="text-label">Add Aadhaar Card*</label><br>
+															<input type="file" name="photo" class="form-control-file" accept="image/*" required>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div id="wizard_Details" class="tab-pane" role="tabpanel">
+											<h4 style="text-align:center;" >Select the brokers, were you are already having demat account with</h4><br>
+											<div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-md ck-table">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+													<div class="custom-control custom-checkbox checkbox-success me-3">
+														<input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
+														<label class="custom-control-label" for="customCheckBox2"></label>&nbsp;
+														<div class="d-flex align-items-center"><img src="{% static 'images/profile/small/zer.jpeg' %}" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Zerodha</span></div>
+													</div>
+
+												</td>
+												<td>
+													<div class="custom-control custom-checkbox checkbox-success me-3">
+														<input type="checkbox" class="form-check-input" id="customCheckBox3" required="">
+														<label class="custom-control-label" for="customCheckBox2"></label>&nbsp;
+														<div class="d-flex align-items-center"><img src="{% static 'images/profile/small/fly.jpeg' %}" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Fyers</span></div>
+													</div>
+												</td>
+												<td>
+													<div class="custom-control custom-checkbox checkbox-success me-3">
+														<input type="checkbox" class="form-check-input" id="customCheckBox4" required="">
+														<label class="custom-control-label" for="customCheckBox2"></label>&nbsp;
+														<div class="d-flex align-items-center"><img src="{% static 'images/profile/small/ang.jpeg' %}" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Angel One</span></div>
+													</div>
+												</td>
+												<td>
+													<div class="custom-control custom-checkbox checkbox-success me-3">
+														<input type="checkbox" class="form-check-input" id="customCheckBox5" required="">
+														<label class="custom-control-label" for="customCheckBox2"></label>&nbsp;
+														<div class="d-flex align-items-center"><img src="{% static 'images/profile/small/zer.jpeg' %}" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Zerodha</span></div>
+													</div>
+												</td>
+												<td>
+													<div class="custom-control custom-checkbox checkbox-success me-3">
+														<input type="checkbox" class="form-check-input" id="customCheckBox6" required="">
+														<label class="custom-control-label" for="customCheckBox2"></label>&nbsp;
+														<div class="d-flex align-items-center"><img src="{% static 'images/profile/small/fly.jpeg' %}" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Fyers</span></div>
+													</div>
+												</td>
+												<td>
+												</td>
+                                            </tr>
+										<tr>
+                                                <td>
+													<div class="custom-control custom-checkbox checkbox-success me-3">
+														<input type="checkbox" class="form-check-input" id="customCheckBox18" required="">
+														<label class="custom-control-label" for="customCheckBox2"></label>&nbsp;
+														<div class="d-flex align-items-center"><img src="{% static 'images/profile/small/zer.jpeg' %}" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Zerodha</span></div>
+													</div>
+
+												</td>
+												<td>
+													<div class="custom-control custom-checkbox checkbox-success me-3">
+														<input type="checkbox" class="form-check-input" id="customCheckBox19" required="">
+														<label class="custom-control-label" for="customCheckBox2"></label>&nbsp;
+														<div class="d-flex align-items-center"><img src="{% static 'images/profile/small/fly.jpeg' %}" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Fyers</span></div>
+													</div>
+												</td>
+												<td>
+													<div class="custom-control custom-checkbox checkbox-success me-3">
+														<input type="checkbox" class="form-check-input" id="customCheckBox20" required="">
+														<label class="custom-control-label" for="customCheckBox2"></label>&nbsp;
+														<div class="d-flex align-items-center"><img src="{% static 'images/profile/small/ang.jpeg' %}" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Angel One</span></div>
+													</div>
+												</td>
+												<td>
+													<div class="custom-control custom-checkbox checkbox-success me-3">
+														<input type="checkbox" class="form-check-input" id="customCheckBox21" required="">
+														<label class="custom-control-label" for="customCheckBox2"></label>&nbsp;
+														<div class="d-flex align-items-center"><img src="{% static 'images/profile/small/zer.jpeg' %}" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Zerodha</span></div>
+													</div>
+												</td>
+												<td>
+													<div class="custom-control custom-checkbox checkbox-success me-3">
+														<input type="checkbox" class="form-check-input" id="customCheckBox22" required="">
+														<label class="custom-control-label" for="customCheckBox2"></label>&nbsp;
+														<div class="d-flex align-items-center"><img src="{% static 'images/profile/small/fly.jpeg' %}" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Fyers</span></div>
+													</div>
+												</td>
+												<td>
+												</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+					<div class="col-lg-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4  class="card-title">Your Income</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered verticle-middle table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Income</th>
+                                                <th scope="col">Progress</th>
+                                                <th scope="col">Select</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>₹300000 - ₹500000</td>
+                                                <td>
+													<div class="progress mt-3">
+                                                   <div class="progress-bar bg-success progress-animated" style="width: 30%; height:6px;" role="progressbar"><span class="sr-only">60% Complete</span>
+                                                   </div>
+                                                 </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-control custom-radio radio-success me-3">
+                                                       <input type="radio" class="form-check-input" id="customRadio1" name="customRadioGroup" required="">
+                                                       <label class="custom-control-label" for="customRadio1"></label>
+													</div>
+												</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>₹500000 - ₹1000000</td>
+                                                <td>
+                                                    <div class="progress mt-3">
+                                                       <div class="progress-bar bg-primary progress-animated" style="width: 50%; height:6px;" role="progressbar">
+                                                          <span class="sr-only">60% Complete</span>
+                                                       </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-control custom-radio radio-success me-3">
+                                                       <input type="radio" class="form-check-input" id="customRadio2" name="customRadioGroup" required="">
+                                                       <label class="custom-control-label" for="customRadio1"></label>
+													</div>
+												</td>
+                                            </tr>
+                                            <tr>
+                                                <td>₹1000000 - ₹5000000</td>
+                                                <td>
+                                                    <div class="progress mt-3">
+                                                         <div class="progress-bar bg-info progress-animated" style="width: 60%; height:6px;" role="progressbar">
+															 <span class="sr-only">60% Complete</span>
+                                                         </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-control custom-radio radio-success me-3">
+                                                       <input type="radio" class="form-check-input" id="customRadio3" name="customRadioGroup" required="">
+                                                       <label class="custom-control-label" for="customRadio1"></label>
+													</div>
+												</td>
+                                            </tr>
+                                            <tr>
+                                                <td>₹5000000 - ₹7000000</td>
+                                                <td>
+                                                    <div class="progress mt-3">
+                                                       <div class="progress-bar bg-danger progress-animated" style="width: 70%; height:6px;" role="progressbar">
+                                                          <span class="sr-only">60% Complete</span>
+                                                       </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-control custom-radio radio-success me-3">
+                                                       <input type="radio" class="form-check-input" id="customRadio4" name="customRadioGroup" required="">
+                                                       <label class="custom-control-label" for="customRadio1"></label>
+													</div>
+												</td>
+                                            </tr>
+                                            <tr>
+                                                <td>₹7000000 - ₹1Cr</td>
+                                                <td>
+                                                    <div class="progress mt-3">
+                                                       <div class="progress-bar bg-warning progress-animated" style="width: 100%; height:6px;" role="progressbar">
+                                                          <span class="sr-only">60% Complete</span>
+													   </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-control custom-radio radio-success me-3">
+                                                       <input type="radio" class="form-check-input" id="customRadio5" name="customRadioGroup" required="">
+                                                       <label class="custom-control-label" for="customRadio1"></label>
+													</div>
+												</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+											<div class="col-lg-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4  class="card-title">Your Proposed Investment with Gate Trader</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered verticle-middle table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Income</th>
+                                                <th scope="col">Progress</th>
+                                                <th scope="col">Select</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>₹100000 - ₹500000</td>
+                                                <td>
+													<div class="progress mt-3">
+                                                   <div class="progress-bar bg-success progress-animated" style="width: 30%; height:6px;" role="progressbar"><span class="sr-only">60% Complete</span>
+                                                   </div>
+                                                 </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-control custom-radio radio-success me-3">
+                                                       <input type="radio" class="form-check-input" id="customRadio6" name="customRadioGroup" required="">
+                                                       <label class="custom-control-label" for="customRadio1"></label>
+													</div>
+												</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>₹500000 - ₹1000000</td>
+                                                <td>
+                                                    <div class="progress mt-3">
+                                                       <div class="progress-bar bg-primary progress-animated" style="width: 50%; height:6px;" role="progressbar">
+                                                          <span class="sr-only">60% Complete</span>
+                                                       </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-control custom-radio radio-success me-3">
+                                                       <input type="radio" class="form-check-input" id="customRadio7" name="customRadioGroup" required="">
+                                                       <label class="custom-control-label" for="customRadio1"></label>
+													</div>
+												</td>
+                                            </tr>
+                                            <tr>
+                                                <td>₹1000000 - ₹2000000</td>
+                                                <td>
+                                                    <div class="progress mt-3">
+                                                         <div class="progress-bar bg-info progress-animated" style="width: 60%; height:6px;" role="progressbar">
+															 <span class="sr-only">60% Complete</span>
+                                                         </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-control custom-radio radio-success me-3">
+                                                       <input type="radio" class="form-check-input" id="customRadio8" name="customRadioGroup" required="">
+                                                       <label class="custom-control-label" for="customRadio1"></label>
+													</div>
+												</td>
+                                            </tr>
+                                            <tr>
+                                                <td>₹2000000 - ₹5000000</td>
+                                                <td>
+                                                    <div class="progress mt-3">
+                                                       <div class="progress-bar bg-danger progress-animated" style="width: 70%; height:6px;" role="progressbar">
+                                                          <span class="sr-only">60% Complete</span>
+                                                       </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-control custom-radio radio-success me-3">
+                                                       <input type="radio" class="form-check-input" id="customRadio9" name="customRadioGroup" required="">
+                                                       <label class="custom-control-label" for="customRadio1"></label>
+													</div>
+												</td>
+                                            </tr>
+                                            <tr>
+                                                <td>₹5000000 - ₹1Cr</td>
+                                                <td>
+                                                    <div class="progress mt-3">
+                                                       <div class="progress-bar bg-warning progress-animated" style="width: 100%; height:6px;" role="progressbar">
+                                                          <span class="sr-only">60% Complete</span>
+													   </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-control custom-radio radio-success me-3">
+                                                       <input type="radio" class="form-check-input" id="customRadio10" name="customRadioGroup" required="">
+                                                       <label class="custom-control-label" for="customRadio1"></label>
+													</div>
+												</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+					<div class="row">
+						<div style="margin-left:2%;" class="col-lg-4 mb-3">
+							<div class="form-group">
+								<label class="text-label"><b>Your trading experience*</b></label>
+								<select name="qualification" class="form-control" required>
+									<option value="" disabled selected>Select</option>
+									<option value="excellent">Excellent</option>
+									<option value="very-good">Very Good</option>
+									<option value="good">Good</option>
+									<option value="medium">Medium</option>
+									<option value="beginner">Beginner</option>
+								</select>
+							</div>
+						</div>
+
+						<div style="margin-left:12%;" class="col-lg-4 mb-3">
+							<div class="form-group">
+								<label class="text-label"><b>Option trading experience*</b></label>
+								<select name="qualification" class="form-control" required>
+									<option value="" disabled selected>Select</option>
+									<option value="0-1">0 - 1</option>
+									<option value="1-2">1 - 2</option>
+									<option value="2-4">2 - 4</option>
+									<option value="4-10">4 - 10</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="wizard_Payment" class="tab-pane" role="tabpanel">
+					<div class="row emial-setup">
+						<div  class="card"><br>
+							<h2 style="text-align:center;" >Connect your social media accounts</h2><br>
+							<p style="text-align:center;" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+							<div class="row">
+								<div class="col-xl-3 col-xxl-3 col-sm-6"><br>
+									<div class="card">
+										<button type="button" class="btn btn-facebook">Facebook <span class="btn-icon-end"><i class="fab fa-facebook-f"></i></span></button><br>
+										<h4 style="text-align:center;" class="m-1"><span class="counter">@Marquezz Silalahi</span></h4><br>
+										<span class="badge light badge-success"><i class="fa fa-circle text-success me-1"></i>Connected</span>
+									</div>
+								</div>
+
+								<div class="col-xl-3 col-xxl-3 col-sm-6"><br>
+									<div class="card">
+										<button type="button" class="btn btn-linkedin">Linkedin <span class="btn-icon-end"><i class="fab fa-linkedin-in"></i></span></button><br>
+										<h4 style="text-align:center;" class="m-1"><span class="counter">@Username</span></h4><br>
+										<a style="text-align:center;"  href="https://in.linkedin.com/"> <span class="badge light badge-danger"><i class="fa fa-circle text-danger me-1"></i>Click here to connect</span></a>
+									</div>
+								</div>
+
+								<div class="col-xl-3 col-xxl-3 col-sm-6"><br>
+									<div class="card">
+										<button type="button" class="btn btn-google">Google <span class="btn-icon-end"><i class="fab fa-google"></i></span></button><br>
+										<h4 style="text-align:center;" class="m-1"><span class="counter">@Username</span></h4><br>
+										<a style="text-align:center;"  href=""> <span class="badge light badge-danger"><i class="fa fa-circle text-danger me-1"></i>Click here to connect</span></a>
+									</div>
+								</div>
+
+								<div class="col-xl-3 col-xxl-3 col-sm-6"><br>
+									<div class="card">
+										<button type="button" class="btn btn-instagram">Instagram <span
+                                        class="btn-icon-end"><i class="fab fa-instagram"></i></span></button><br>
+										<h4 style="text-align:center;" class="m-1"><span class="counter">@Username</span></h4><br>
+										<a style="text-align:center;"  href=""> <span class="badge light badge-danger"><i class="fa fa-circle text-danger me-1"></i>Click here to connect</span></a>
+									</div>
+									</div>
+								<br><br><br><br>
+									</div>
+									</div>
+						<a href="{% url 'profile' %}"> <h5 style="text-align:center;" ><b>Click here to go back to Profile Page!</b></h5></a>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		  </div>
+			</div>
+		  </div>
+	</div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p style="margin-right:30%;">Copyright © Designed &amp; Developed by <a href="https://gatefuturelabs.com/" target="_blank">GateFutureLabs</a> 2024</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+
+
+
+
+
+
+<!-- Required vendors -->
+    <script src="{% static './vendor/global/global.min.js' %}"></script>
+	<script src="{% static './vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+
+    <script src="{% static './vendor/jquery-steps/build/jquery.steps.min.js' %}"></script>
+    <script src="{% static './vendor/jquery-validation/jquery.validate.min.js' %}"></script>
+    <!-- Form validate init -->
+    <script src="{% static './js/plugins-init/jquery.validate-init.js' %}"></script>
+
+   <!-- Form Steps -->
+	<script src="{% static './vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js' %}"></script>
+
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+
+
+</body>
+</html>
+
+
+

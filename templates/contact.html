@@ -1,0 +1,366 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="GATE_Future_Labs,Vr_trading,algo_trading_brainwave,vr_reality,value_innovation">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="description" content="GATE Trader  Website">
+	<meta property="og:title" content="GATE Trader  Website">
+	<meta property="og:description" content="GATE Trader  Website">
+	<meta property="og:image" content="https://gatefuturelabs.com">
+	<meta name="format-detection" content="telephone=no">
+    <title>Gate Trader</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon11.png' %}">
+	<link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+	<link class="skin" rel="stylesheet" href="{% static './css/skin/skin-1.css' %}">
+
+<!-- Global CSS -->
+    <link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+<!-- End Global CSS -->
+
+<!-- Page Level CSS -->
+	<link rel="stylesheet" href="{% static './vendor/chartist/css/chartist.min.css' %}">
+	<link href="{% static './vendor/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+<!-- End Page Level CSS -->
+
+<!-- Bottom CSS -->
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+<!-- End Bottom CSS CSS -->
+
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+
+        <div class="nav-header">
+            <a href="{% url 'login' %}" class="brand-logo">
+                <img src="{% static 'images/trader13.png' %}" style="width:180px;height:70px;align:right">
+            </a>
+
+        </div>
+        
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="input-group search-area right d-lg-inline-flex d-none">
+
+								<h3 class="text-center my-5">CONTACT US</h3>
+
+							</div>
+                        </div>
+
+                    </div>
+                </nav>
+			</div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+		<!--**********************************
+            Header start
+        ***********************************-->
+
+
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+		<!--**********************************
+            Content body start
+        ***********************************-->
+
+<div style="margin-left:2%;margin-right:15%;" class="content-body">
+			<div class="container-fluid">
+				<!-- Add Project -->
+				<div class="modal fade" id="addProjectSidebar">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Create Project</h5>
+								<button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label class="text-black font-w500">Project Name</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label class="text-black font-w500">Deadline</label>
+										<input type="date" class="form-control">
+									</div>
+									<div class="form-group">
+										<label class="text-black font-w500">Client Name</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<button type="button" class="btn btn-primary">CREATE</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-4 order-lg-2 mb-4">
+                                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="text-muted">Contact</span>
+                                        </h4>
+                                        <ul class="list-group mb-3">
+
+
+                        <div class="">
+                            <div class="card-body pb-0">
+                                <div class="widget-media">
+									<ul class="timeline">
+										<li>
+											<div class="timeline-panel">
+												<div class="media me-2">
+                                                    <i class="fas fa-envelope" style="font-size: 50px;"></i>
+                                                </div>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+												<div class="media-body">
+													<h6 class="mb-1">Office - Partnership</h6>
+													<small class="d-block">Talk, directly to our CEO.</small>
+                                                    <h5 class="mb-1">ceo@gatefuturelabs.com</h5>
+												</div>
+
+											</div>
+										</li>
+
+
+										<li>
+											<div class="timeline-panel">
+												<div class="media me-2">
+                                                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                                                </div>
+
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+												<div class="media-body">
+													<h6 class="mb-1">Chat to us - Support</h6>
+													<small class="d-block">Our friendly team is here to help.</small>
+                                                    <h5 class="mb-1">support@gatetrader.com</h5>
+												</div>
+
+											</div>
+										</li>
+
+									</ul>
+								</div>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="chart_widget_9"></canvas>
+                            </div>
+                        </div>
+
+                                        </ul>
+
+                                        <form>
+
+                                        </form>
+                                    </div>
+                                    <div class="col-lg-8 order-lg-1">
+                                        <h4 class="mb-3">Get In touch</h4>
+                                        <form class="needs-validation" novalidate="">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="firstName" class="form-label">First name</label>
+                                                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                                                    <div class="invalid-feedback">
+                                                        Valid first name is required.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="lastName"  class="form-label">Last name</label>
+                                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                                                    <div class="invalid-feedback">
+                                                        Valid last name is required.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="email"  class="form-label">Email <span
+                                                        class="text-muted"></span></label>
+                                                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                                                <div class="invalid-feedback">
+                                                    Please enter a valid email address for shipping updates.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="mobileNumber" class="form-label">Mobile Number</label>
+                                                <input type="text" class="form-control" id="mobileNumber" placeholder="Enter your mobile number" required="">
+                                                <div class="invalid-feedback">
+                                                     Please enter your mobile number.
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label for="address2" class="form-label">Message<span class="text-muted"></span></label>
+                                                <textarea class="form-control" id="address2" placeholder="Type Message..." rows="4"></textarea>
+                                            </div>
+
+                                            <br><br>
+
+
+                                            <button class="btn btn-primary btn-lg btn-block" type="submit">SUBMIT</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+
+
+
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p style="text-align:center;">Copyright © Designed &amp; Developed by <a href="https://gatefuturelabs.com/" target="_blank">GateFutureLabs</a> 2024</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+
+
+
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+	<script src="{% static './vendor/global/global.min.js' %}"></script>
+
+	<script src="{% static './vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+
+	<script src="{% static './vendor/chart.js/Chart.bundle.min.js' %}"></script>
+	<!-- Chart piety plugin files -->
+    <script src="{% static './vendor/peity/jquery.peity.min.js' %}"></script>
+
+	<!-- Apex Chart -->
+	<script src="{% static './vendor/apexchart/apexchart.js' %}"></script>
+
+	<!-- Dashboard 1 -->
+	<script src="{% static './js/dashboard/dashboard-1.js' %}"></script>
+	<script src="{% static './vendor/owl-carousel/owl.carousel.js' %}"></script>
+
+	<script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+	<!-- Required vendors -->
+
+
+    <script src="{% static './vendor/chart.js/Chart.bundle.min.js' %}"></script>
+
+
+    <!-- Chart Chartist plugin files -->
+    <script src="{% static './vendor/chartist/js/chartist.min.js' %}"></script>
+    <script src="{% static './vendor/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js' %}"></script>
+    <script src="{% static './js/plugins-init/chartist-init.js' %}"></script>
+
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+	 <!-- Required vendors -->
+    <script src="{% static './vendor/global/global.min.js' %}"></script>
+	<script src="{% static './vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+
+    <!-- Daterangepicker -->
+    <!-- momment js is must -->
+    <script src="{% static './vendor/moment/moment.min.js' %}"></script>
+    <script src="{% static './vendor/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+    <!-- clockpicker -->
+    <script src="{% static './vendor/clockpicker/js/bootstrap-clockpicker.min.js' %}"></script>
+    <!-- asColorPicker -->
+    <script src="{% static './vendor/jquery-asColor/jquery-asColor.min.js' %}"></script>
+    <script src="{% static './vendor/jquery-asGradient/jquery-asGradient.min.js' %}"></script>
+    <script src="{% static './vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js' %}"></script>
+    <!-- Material color picker -->
+    <script src="{% static './vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js' %}"></script>
+    <!-- pickdate -->
+    <script src="{% static './vendor/pickadate/picker.js' %}"></script>
+    <script src="{% static './vendor/pickadate/picker.time.js' %}"></script>
+    <script src="{% static './vendor/pickadate/picker.date.js' %}"></script>
+
+
+
+    <!-- Daterangepicker -->
+    <script src="{% static './js/plugins-init/bs-daterange-picker-init.js"></script>
+    <!-- Clockpicker init -->
+    <script src="{% static './js/plugins-init/clock-picker-init.js"></script>
+    <!-- asColorPicker init -->
+    <script src="{% static './js/plugins-init/jquery-asColorPicker.init.js"></script>
+    <!-- Material color picker init -->
+    <script src="{% static './js/plugins-init/material-date-picker-init.js"></script>
+    <!-- Pickdate -->
+    <script src="{% static './js/plugins-init/pickadate-init.js"></script>
+
+
+
+
+</body>
+</html>

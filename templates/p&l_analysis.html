@@ -1,0 +1,712 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="GATE_Future_Labs,Vr_trading,algo_trading_brainwave,vr_reality,value_innovation">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="description" content="GATE Trader  Website">
+	<meta property="og:title" content="GATE Trader  Website">
+	<meta property="og:description" content="GATE Trader  Website">
+	<meta property="og:image" content="https://gatefuturelabs.com">
+	<meta name="format-detection" content="telephone=no">
+    <title>Gate Trader</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon11.png' %}">
+	<link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+	<link class="skin" rel="stylesheet" href="{% static './css/skin/skin-1.css' %}">
+	<link href="{% static './vendor/fullcalendar/css/main.min.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static './vendor/chartist/css/chartist.min.css' %}">
+
+	<!-- Datatable -->
+    <link href="{% static './vendor/datatables/css/jquery.dataTables.min.css' %}" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+	<link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+
+<!-- Global CSS -->
+    <link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+<!-- End Global CSS -->
+
+<!-- Page Level CSS -->
+	<link rel="stylesheet" href="{% static './vendor/chartist/css/chartist.min.css' %}">
+	<link href="{% static './vendor/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+<!-- End Page Level CSS -->
+
+<!-- Bottom CSS -->
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+<!-- End Bottom CSS CSS -->
+
+	<!-- Daterange picker -->
+    <link href="{% static './vendor/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+    <!-- Clockpicker -->
+    <link href="{% static './vendor/clockpicker/css/bootstrap-clockpicker.min.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="{% url 'index' %}" class="brand-logo">
+                     <img src="{% static 'images/trader13.png' %}" style="width:170px;height:65px;align:right">
+            </a>
+
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+
+		<!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="input-group search-area right d-lg-inline-flex d-none">
+								<input type="text" class="form-control" placeholder="Find something here...">
+								<div class="input-group-append">
+									<span class="input-group-text">
+										<a href="javascript:void(0)">
+											<i class="flaticon-381-search-2"></i>
+										</a>
+									</span>
+								</div>
+							</div>
+							</div>
+
+						<marquee><b style="color: red;">All data displayed here are sample dummy data. Once you are connected with a broker, then live data will be populated.</b></marquee>
+
+
+                        <ul class="navbar-nav header-right main-notification">
+
+							<li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell dz-fullscreen" href="javascript:void(0);">
+                                    <svg id="icon-full" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path></svg>
+                                    <svg id="icon-minimize" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minimize"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path></svg>
+                                </a>
+							</li>
+
+
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+                                    <img src="{% static 'images/pro.png'' %}" alt="" id="profile-image" >
+									<div class="header-info">
+										<span id="userName">User</span>
+										<small id="userRole" >Super Admin</small>
+									</div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="{% url 'profile' %}" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ms-2">Profile </span>
+                                    </a>
+                                    <a href="./email-inbox.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <span class="ms-2">Inbox </span>
+                                    </a>
+                                    <a href="./page-login.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ms-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+			</div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="deznav">
+            <div class="deznav-scroll">
+				<div class="main-profile">
+					<div class="image-bx">
+						<img src="{% static 'images/pro.png' %}" alt="" id="profile-image1" >
+						<a href="{% url 'edit' %}"><i class="fa fa-cog" aria-hidden="true"></i></a>
+					</div>
+					<h5 id="userName1" class="name"><span class="font-w400">Hello,</span> User</h5>
+					<p id="lastLoggedIn"  class="email">Last logged in : 2/5/2020 06:24 AM</p>
+				</div><br>
+				<ul class="metismenu" id="menu">
+                    <li><a class="has-arrow ai-icon" href="{% url 'index' %}" aria-expanded="false">
+							<i class="flaticon-144-layout"></i>
+							<span class="nav-text">Home</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'broker' %}" aria-expanded="false">
+							<i class="flaticon-061-puzzle"></i>
+							<span class="nav-text">Broker</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'trade_graph' %}" aria-expanded="false">
+							<i class="flaticon-061-puzzle"></i>
+							<span class="nav-text">Live Trade</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'order' %}" aria-expanded="false">
+							<i class="flaticon-003-diamond"></i>
+							<span class="nav-text">Order Book</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'p&l' %}" aria-expanded="false">
+							<i class="flaticon-053-heart"></i>
+							<span class="nav-text">Profit & Loss</span>
+						</a>
+						<ul aria-expanded="false">
+							<li><a href="{% url 'p&l' %}">P & L</a></li>
+                            <li><a href="{% url 'p&l_analysis' %}">P & L Analaysis</a></li>
+
+                        </ul>
+                    </li>
+					 <li><a class="has-arrow ai-icon" href="{% url 'market' %}" aria-expanded="false">
+							<i class="flaticon-381-settings-2"></i>
+							<span class="nav-text">Market Profile</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'news' %}" aria-expanded="false">
+							<i class="flaticon-044-file"></i>
+							<span   class="nav-text">Market News</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="{% url 'subscriptions' %}" aria-expanded="false">
+							<i class="flaticon-381-network"></i>
+							<span class="nav-text">Subscription</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-049-copy"></i>
+							<span class="nav-text">Refer & Earn</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                            <li><a href="{% url 'login' %}">Login</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+				<div class="copyright">
+					<p><strong>Gate Trader</strong> © 2024 All Rights Reserved</p>
+					<p class="fs-12">Made with <span class="heart"></span> by GateFutureLabs</p>
+				</div>
+			</div>
+        </div>
+
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+		<!--**********************************
+            Content body start
+        ***********************************-->
+
+
+		 <div class="content-body">
+			<div class="container-fluid">
+				<!-- Add Project -->
+                <!-- row -->
+                <div class="row">
+
+					<div class="col-sm-3">
+								<div class="card-bx stacked card">
+									<img src="{% static 'images/card/card1.jpg' %}" alt="">
+									<div class="card-info">
+										<p class="mb-1 text-white fs-14">Total Earnings</p>
+										<div class="d-flex justify-content-between">
+											<h2 style="font-size:20px;" class="num-text text-white mb-5 font-w600">₹673</h2>
+											<svg width="45" height="24" viewBox="0 0 55 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<circle cx="38.0091" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+												<circle cx="17.4636" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+											</svg>
+										</div>
+										<div class="d-flex">
+											<div class="me-4 text-white">
+												<p class="fs-14 mb-1 op12">INVESTMENT ₹673</p>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+					<div class="col-sm-3">
+								<div class="card-bx stacked card">
+									<img src="{% static 'images/card/card2.jpg' %}" alt="">
+									<div class="card-info">
+										<p class="mb-1 text-white fs-14">Profit Percentage</p>
+										<div class="d-flex justify-content-between">
+											<h2 style="font-size:20px;" class="num-text text-white mb-5 font-w600">99%</h2>
+											<svg width="45" height="24" viewBox="0 0 55 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<circle cx="38.0091" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+												<circle cx="17.4636" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+											</svg>
+										</div>
+										<div class="d-flex">
+											<div class="me-4 text-white">
+												<p class="fs-12 mb-1 op12">PROFIT% 67</p>
+											</div>
+											<div class="text-white">
+												<p class="fs-12 mb-1 op12">LOSS% 40</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					<div class="col-sm-3">
+								<div class="card-bx stacked card">
+									<img src="{% static 'images/card/card3.jpg' %}" alt="">
+									<div class="card-info">
+										<p class="mb-1 text-white fs-14">Total Days</p>
+										<div class="d-flex justify-content-between">
+											<h2 style="font-size:20px;" class="num-text text-white mb-5 font-w600">40 Days</h2>
+											<svg width="45" height="24" viewBox="0 0 55 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<circle cx="38.0091" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+												<circle cx="17.4636" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+											</svg>
+										</div>
+										<div class="d-flex">
+											<div class="me-4 text-white">
+												<p class="fs-12 mb-1 op12">TRADE 15</p>
+
+											</div>
+											<div class="text-white">
+												<p class="fs-12 mb-1 op12">ORDER 13</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="card-bx stacked card">
+									<img src="{% static 'images/card/card4.jpg' %}" alt="">
+									<div class="card-info">
+										<p class="mb-1 text-white fs-14">Win Rate</p>
+										<div class="d-flex justify-content-between">
+											<h2 style="font-size:20px;" class="num-text text-white mb-5 font-w600">93%</h2>
+											<svg width="45" height="24" viewBox="0 0 55 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<circle cx="38.0091" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+												<circle cx="17.4636" cy="16.7788" r="16.7788" fill="white" fill-opacity="0.67"/>
+											</svg>
+										</div>
+										<div class="d-flex">
+											<div class="me-4 text-white">
+												<p class="fs-12  mb-1 op12">WIN 93%</p>
+											</div>
+											<div class="text-white">
+												<p class="fs-12 mb-1 op12">LOSS 7%</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                </div>
+
+				<div class="row">
+					<div class="col-xl-9 col-xxl-8">
+						<div class="row">
+							<div class="col-xl-4 col-xxl-12">
+								<div class="row">
+									<div class="col-xl-12 m-t25">
+										<div class="card">
+											<div class="card-header border-0">
+												<h4 class="mb-0 fs-20">Current Graph</h4>
+												<div class="dropdown custom-dropdown mb-0 tbl-orders-style">
+													<div class="btn sharp tp-btn" data-bs-toggle="dropdown">
+														<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+															<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+															<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+														</svg>
+													</div>
+													<div class="dropdown-menu dropdown-menu-end">
+														<a class="dropdown-item" href="javascript:void(0);">Details</a>
+														<a class="dropdown-item text-danger" href="javascript:void(0);">Cancel</a>
+													</div>
+												</div>
+											</div>
+											<div class="card-body pb-0 px-2">
+												<div id="CurrentGraph"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-xxl-4">
+						<div class="row">
+							</div>
+							<div class="col-xl-12 col-lg-6 col-sm-6">
+								<div class="card">
+									<div class="card-header border-0">
+										<h4 class="mb-0 text-black fs-20">Pie Graph</h4>
+										<div class="dropdown custom-dropdown mb-0 tbl-orders-style">
+											<div class="btn sharp tp-btn" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+												<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M12.0049 13C12.5572 13 13.0049 12.5523 13.0049 12C13.0049 11.4477 12.5572 11 12.0049 11C11.4526 11 11.0049 11.4477 11.0049 12C11.0049 12.5523 11.4526 13 12.0049 13Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+													<path d="M12.0049 6C12.5572 6 13.0049 5.55228 13.0049 5C13.0049 4.44772 12.5572 4 12.0049 4C11.4526 4 11.0049 4.44772 11.0049 5C11.0049 5.55228 11.4526 6 12.0049 6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+													<path d="M12.0049 20C12.5572 20 13.0049 19.5523 13.0049 19C13.0049 18.4477 12.5572 18 12.0049 18C11.4526 18 11.0049 18.4477 11.0049 19C11.0049 19.5523 11.4526 20 12.0049 20Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</div>
+											<div class="dropdown-menu dropdown-menu-end">
+												<a class="dropdown-item" href="javascript:void(0);">Details</a>
+												<a class="dropdown-item text-danger" href="javascript:void(0);">Cancel</a>
+											</div>
+										</div>
+									</div>
+									<div class="card-body text-center">
+										<div id="pieChart" class="d-inline-block"></div>
+										<div class="chart-items">
+											<div class=" col-xl-12 col-sm-12">
+												<div class="row text-black text-start fs-13 mt-4">
+													<span class="mb-3 col-6 px-2">
+														<svg class="me-2" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="19" height="19" rx="9.5" fill="#00ADA3"/>
+														</svg>
+														Ethereum
+													</span>
+													<span class="mb-3 col-6 px-2">
+														<svg class="me-2" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="19" height="19" rx="9.5" fill="#374B96"/>
+														</svg>
+														Litecoin
+													</span>
+													<span class="mb-3 col-6 px-2">
+														<svg class="me-2" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="19" height="19" rx="9.5" fill="#FF782C"/>
+														</svg>
+														Monero
+													</span>
+													<span class="mb-3 col-6 px-2">
+														<svg class="me-2" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="19" height="19" rx="9.5" fill="#F7A62C"/>
+														</svg>
+														Bitcoin
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<div class="row">
+                     <div class="col-xl-8 col-lg-6">
+                                <div class="card">
+									<div class="card-header">
+                                        <h4 class="card-title">Total Profit &nbsp; Vs &nbsp; Investment</h4>
+                                    </div>
+									<div class="card-body">
+                                        <div id="line-smoothing" class="ct-chart ct-golden-section chartlist-chart"></div>
+                                    </div>
+
+                                </div>
+                     </div>
+
+					<div class="col-xl-4 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Timewise Trade Percentage</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="morris_donught" class="morris_chart_height"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                  </div>
+
+					 <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+							<div class="col-xl-6 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Bar Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+										<div id="morris_bar" class="morris_chart_height"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+								<div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Line Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="line_chart_2" class="morris_chart_height"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Line Chart</h4>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div id="morris_line" class="morris_chart_height"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Bar Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+
+                                        <div id="morris_bar_stalked" class="morris_chart_height"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+							<div class="col-xl-12 col-lg-6">
+                                <div class="card">
+									<div class="card-header">
+                                        <h4 class="card-title">Overlapping Bars On Mobile</h4>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div id="overlapping-bars" class="ct-chart ct-golden-section chartlist-chart"></div>
+                                    </div>
+                                </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p style="margin-right:45%;">Copyright © Designed &amp; Developed by <a href="https://gatefuturelabs.com/" target="_blank">GateFutureLabs</a> 2024</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+
+
+
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+	<script src="{% static './vendor/global/global.min.js' %}"></script>
+
+	<script src="{% static './vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+
+	<script src="{% static './vendor/chart.js/Chart.bundle.min.js' %}"></script>
+	<!-- Chart piety plugin files -->
+    <script src="{% static './vendor/peity/jquery.peity.min.js' %}"></script>
+
+	<!-- Apex Chart -->
+	<script src="{% static './vendor/apexchart/apexchart.js' %}"></script>
+
+	<!-- Dashboard 1 -->
+	<script src="{% static './js/dashboard/dashboard-1.js' %}"></script>
+	<script src="{% static './vendor/owl-carousel/owl.carousel.js' %}"></script>
+
+	<script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+	<!-- Required vendors -->
+
+
+    <script src="{% static './vendor/chart.js/Chart.bundle.min.js' %}"></script>
+
+
+    <!-- Chart Chartist plugin files -->
+    <script src="{% static './vendor/chartist/js/chartist.min.js' %}"></script>
+    <script src="{% static './vendor/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js' %}"></script>
+    <script src="{% static './js/plugins-init/chartist-init.js' %}"></script>
+
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+	  <script src="{% static './vendor/global/global.min.js' %}"></script>
+	<script src="{% static './vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static './vendor/moment/moment.min.js' %}"></script>
+
+    <script src="{% static './vendor/fullcalendar/js/main.min.js' %}"></script>
+	<script src="{% static './js/plugins-init/fullcalendar-init.js' %}"></script>
+
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+
+ <!-- Chart piety plugin files -->
+    <script src="{% static './vendor/peity/jquery.peity.min.js' %}"></script>
+
+    <script src="{% static './js/plugins-init/piety-init.js' %}"></script>
+
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+
+<!-- Chart Morris plugin files -->
+    <script src="{% static './vendor/raphael/raphael.min.js' %}"></script>
+    <script src="{% static './vendor/morris/morris.min.js' %}"></script>
+    <script src="{% static './js/plugins-init/morris-init.js' %}"></script>
+
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+
+ <!-- Required vendors -->
+    <script src="{% static './vendor/global/global.min.js' %}"></script>
+	<script src="{% static './vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+	<script src="{% static './vendor/chart.js/Chart.bundle.min.js' %}"></script>
+
+	<!-- Apex Chart -->
+	<script src="{% static './vendor/apexchart/apexchart.js' %}"></script>
+
+
+	<!-- Dashboard 1 -->
+	<script src="{% static './js/dashboard/portofolio.js' %}"></script>
+
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+
+
+ <!-- Required vendors -->
+    <script src="{% static './vendor/global/global.min.js' %}"></script>
+	<script src="{% static './vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+
+    <!-- Daterangepicker -->
+    <!-- momment js is must -->
+    <script src="{% static './vendor/moment/moment.min.js' %}"></script>
+    <script src="{% static './vendor/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+    <!-- clockpicker -->
+    <script src="{% static './vendor/clockpicker/js/bootstrap-clockpicker.min.js' %}"></script>
+    <!-- asColorPicker -->
+    <script src="{% static './vendor/jquery-asColor/jquery-asColor.min.js' %}"></script>
+    <script src="{% static './vendor/jquery-asGradient/jquery-asGradient.min.js' %}"></script>
+    <script src="{% static './vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js' %}"></script>
+    <!-- Material color picker -->
+    <script src="{% static './vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js' %}"></script>
+    <!-- pickdate -->
+    <script src="{% static './vendor/pickadate/picker.js' %}"></script>
+    <script src="{% static './vendor/pickadate/picker.time.js' %}"></script>
+    <script src="{% static './vendor/pickadate/picker.date.js' %}"></script>
+
+
+
+    <!-- Daterangepicker -->
+    <script src="{% static './js/plugins-init/bs-daterange-picker-init.js"></script>
+    <!-- Clockpicker init -->
+    <script src="{% static './js/plugins-init/clock-picker-init.js"></script>
+    <!-- asColorPicker init -->
+    <script src="{% static './js/plugins-init/jquery-asColorPicker.init.js"></script>
+    <!-- Material color picker init -->
+    <script src="{% static './js/plugins-init/material-date-picker-init.js"></script>
+    <!-- Pickdate -->
+    <script src="{% static './js/plugins-init/pickadate-init.js"></script>
+
+
+
+    <script src="{% static './js/custom.js"></script>
+	<script src="{% static './js/deznav-init.js"></script>
+
+
+<!-- Apex Chart -->
+	<script src="{% static './vendor/apexchart/apexchart.js' %}"></script>
+
+	<!-- Dashboard 1 -->
+	<script src="{% static './js/dashboard/coin-details.js' %}"></script>
+
+	 <!-- momment js is must -->
+    <script src="{% static './vendor/moment/moment.min.js' %}"></script>
+    <script src="{% static './vendor/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+
+
+<!-- Required vendors -->
+    <script src="{% static './vendor/global/global.min.js' %}"></script>
+	<script src="{% static './vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+    <!-- Datatable -->
+    <script src="{% static './vendor/datatables/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static './js/plugins-init/datatables.init.js' %}"></script>
+    <script src="{% static './js/custom.js' %}"></script>
+	<script src="{% static './js/deznav-init.js' %}"></script>
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+     <!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="GATE_Future_Labs,Vr_trading,algo_trading_brainwave,vr_reality,value_innovation">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="description" content="GATE Trader  Website">
+	<meta property="og:title" content="GATE Trader  Website">
+	<meta property="og:description" content="GATE Trader  Website">
+	<meta property="og:image" content="https://gatefuturelabs.com">
+	<meta name="format-detection" content="telephone=no">
+    <title>Gate Trader </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon11.png' %}">
+	<link href="{% static './vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+    <link href="{% static './css/style.css' %}" rel="stylesheet">
+
+</head>
+<br>
+<body class="vh-100">
+    <div class="authincation h-100">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+									<div class="text-center mb-3">
+										<a class="brand-logo">
+                                             <img src="{% static 'images/trader13.png' %}" style="width:169px;height:69px;align:right;margin-right:1%;">
+										</a>
+									</div>
+                                    <h4  class="text-center mb-4">Sign up your account</h4>
+                                    <form action="{% url 'otp' %}">
+                                        <div class="form-group">
+                                            <label for="username">User Name <i>(letters and numbers only, no punctuation or special characters)</i></label><br>
+                                            <label class="mb-1"><strong>User Name</strong></label>
+                                            <input type="text" class="form-control" placeholder="Enter User Name" name="username" id="username"  required pattern="[A-Za-z0-9]+" />
+                                             <span id="username-warning" style="color:red;" class="warning">Please enter a valid user name.</span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="email"><strong>Email:</strong></label>
+                                            <input type="text" class="form-control" placeholder="Enter Email" name="email" id="email" required  pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" />
+                                             <span id="email-warning" style="color:red;" class="warning">Please enter a valid email.</span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="phone"><strong>Mobile Number:</strong></label>
+                                            <input type="tel" class="form-control" placeholder="Enter Mobile" id="phone" name="phone" pattern="^[789]\d{9}$" >
+                                             <span id="phone-warning" style="color:red;" class="warning">Please enter a valid mobile number.</span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pwd"><strong>Password:</strong></label>
+                                            <input type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                                            <span id="pwd-warning" style="color:red;" class="warning">Please enter password.</span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pwd-repeat"><strong>Repeat Password:</strong></label>
+                                             <input type="password" class="form-control" placeholder="Repeat Password" name="pwd-repeat" id="pwd-repeat" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                                             <span id="pwd-repeat-warning" style="color:red;" class="warning">Please confirm password.</span>
+                                        </div>
+
+                                        <div class="custom-control custom-checkbox ms-1">
+                                            <input type="checkbox" class="form-check-input" id="basic_checkbox_1">
+                                            <label id="terms-label" class="form-check-label" for="basic_checkbox_1">I agree with the <a style="color:#3090c7" href="https://www.gatetrader.com/terms"> Terms & Conditions</a> and i accept them</label>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <div>
+                                                <button type="submit" value="Register" id="registerBtn" style="background-color: #1d1160;border-color:#1d1160;color:#c6a54a;" class="btn btn-primary btn-block" href="{% url 'login' %}"  >Sign up</button><br>
+                                                <div>
+                                                   <p> OR</p>
+                                                    <a id="logo-link" href="" ><img src="{% static 'images/g2.png' %}" style="width:280px;height:40px;margin-right:137%;margin-left:18%;">&nbsp;</a>
+                                                    <a id="facebook-link" href="https://www.facebook.com/" ><img src="{% static 'images/fb3.png' %}" style="width:280px;height:40px;margin-right:137%;margin-left:18%;"></a>
+                                        </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="new-account mt-3">
+                                        <p id="signin-prompt" style="margin-left:22%;" >Already have an account? <a class="text-primary" href="{% url 'login' %}">Sign in</a></p><br>
+                                        <img src="{% static 'images/frame.png' %}" style="width:66px;height:70px;margin-left:42%;"><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="footer"><br>
+            <img src="{% static 'images/3.png' %}" style="width:90px;height:80px;margin-right:1%;">  &nbsp; <img src="{% static 'images/2.png' %}" style="width:90px;height:50px;margin-right:1%;">&nbsp;<img src="{% static 'images/1.png' %}" style="width:99px;height:80px;margin-right:1%;">&nbsp; <img src="{% static 'images/4.png' %}" style="width:90px;height:50px;align:right;margin-right:1%;">&nbsp; <img src="{% static 'images/5.png' %}" style="width:125px;height:50px;margin-right:1%;">&nbsp; <img src="{% static 'images/6.png' %}" style="width:125px;height:80px;margin-right:1%;">&nbsp; <img src="{% static 'images/7.png' %}" style="width:125px;height:80px;margin-right:1%;">
+            <br><br>
+            <h3 style="margin-left:19%;color:grey;">AUTOPILOT YOUR WEALTH CODE</h3>
+            <p style="margin-left:1%;margin-right:22%;text-align:center;">GateTrader is a NSE India Option Trading platform that provides 100% automated trading algorithms that deploys multiple trading strategies for NIFTY, FinNifty BankNifty Index options. </p><br>
+            <h6 style="margin-left:20%;color:grey;font-size:100%;">About Us   &nbsp;&nbsp;Privacy   &nbsp;&nbsp;Terms & Conditions &nbsp;&nbsp;Contact Us</h6>
+            <div class="copyright">
+            <p style="margin-right:27%;" >Copyright © Designed &amp; Developed by <a href="https://gatefuturelabs.com/" target="_blank">GateFutureLabs</a> 2023
+                <img src="{% static 'images/lg1.png' %}" style="width:70px;height:21px;align:right;margin-right:3%;">
+            </p>
+            </div>
+        </div>
+    <br><br>
+<!--**********************************
+	Scripts
+***********************************-->
+<!-- Required vendors -->
+<script src="{% static './vendor/global/global.min.js' %}"></script>
+<script src="{% static './vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+<script src="{% static './js/custom.js' %}"></script>
+<script src="{% static './js/deznav-init.js' %}"></script>
+<script type="text/javascript">var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"siq6b056cf36dbbad2676aa8c8ab632e518f6eb23adfb3aa6b9d54d9252687a855ca0c23f166ef104aebd34a7821259555b", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript"; s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.in/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");</script>
+</body>
+</html>
